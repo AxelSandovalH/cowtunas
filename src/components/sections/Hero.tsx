@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
 import type { Lang } from "@/lib/i18n";
 
@@ -73,13 +74,10 @@ export default function Hero({ dict, lang }: Props) {
 
         {/* CTAs */}
         <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`/${lang}#contact`}
+          <BookButton
+            label={dict.hero.cta_primary}
             className="group relative bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-black px-10 py-5 rounded-2xl text-base uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-[#d26e4b]/40 hover:-translate-y-1 overflow-hidden"
-          >
-            <span className="relative z-10">{dict.hero.cta_primary}</span>
-            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </a>
+          />
           <a
             href={`/${lang}#gallery`}
             className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-5 rounded-2xl text-base uppercase tracking-wider transition-all duration-200 hover:-translate-y-1"
