@@ -1,6 +1,9 @@
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import BookingForm from "@/components/admin/BookingForm";
+import type { Database } from "@/lib/supabase/types";
+
+type Booking = Database["public"]["Tables"]["bookings"]["Row"];
 
 export default async function EditBookingPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -13,7 +16,7 @@ export default async function EditBookingPage({ params }: { params: Promise<{ id
 
   if (!bookingResult.data) notFound();
 
-  const booking = bookingResult.data;
+  const booking = bookingResult.data as Booking;
   const clients = clientsResult.data;
 
   return (
