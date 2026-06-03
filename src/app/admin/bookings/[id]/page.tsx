@@ -6,12 +6,15 @@ export default async function EditBookingPage({ params }: { params: Promise<{ id
   const { id } = await params;
   const supabase = await createClient();
 
-  const [{ data: booking }, { data: clients }] = await Promise.all([
+  const [bookingResult, clientsResult] = await Promise.all([
     supabase.from("bookings").select("*").eq("id", id).single(),
     supabase.from("clients").select("id, full_name").order("full_name"),
   ]);
 
-  if (!booking) notFound();
+  if (!bookingResult.data) notFound();
+
+  const booking = bookingResult.data;
+  const clients = clientsResult.data;
 
   return (
     <div className="max-w-2xl">
