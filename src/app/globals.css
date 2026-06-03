@@ -7,8 +7,12 @@
   --color-sand: #f7f3ed;
   --color-deep: #1a2b3c;
 
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-heading: "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-display: var(--font-display), "Arial Black", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display);
 }
 
 html {

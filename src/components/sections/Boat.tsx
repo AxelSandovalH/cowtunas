@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 import type { Translations } from "@/lib/translations/types";
 
 type Props = { dict: Translations };
@@ -9,15 +10,13 @@ export default function Boat({ dict }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
-            Your Vessel
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2b3c] mb-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">Your Vessel</p>
+          <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-4">
             {dict.boat.title}
           </h2>
           <p className="text-gray-500 text-lg">{dict.boat.subtitle}</p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 

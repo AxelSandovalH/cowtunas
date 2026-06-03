@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/ui/Reveal";
 import type { Translations } from "@/lib/translations/types";
 
 type Props = { dict: Translations };
@@ -12,10 +13,10 @@ export default function Captain({ dict }: Props) {
 
           {/* Text side */}
           <div className="order-2 lg:order-1">
-            <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
               Your Captain
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2b3c] mb-3">
+            <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-3">
               {dict.captain.title}
             </h2>
             <p className="text-gray-400 text-lg italic mb-6">{dict.captain.subtitle}</p>

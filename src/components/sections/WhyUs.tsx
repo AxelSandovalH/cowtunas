@@ -1,3 +1,4 @@
+import Reveal from "@/components/ui/Reveal";
 import type { Translations } from "@/lib/translations/types";
 
 const icons = [
@@ -28,24 +29,24 @@ export default function WhyUs({ dict }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
             The CowTunas Difference
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2b3c] mb-4">
+          <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-4">
             {dict.whyus.title}
           </h2>
           <p className="text-gray-500 text-lg leading-relaxed">
             {dict.whyus.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {dict.whyus.items.map((item, i) => (
+            <Reveal key={i} delay={i * 0.1}>
             <div
-              key={i}
-              className="group relative bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="group relative bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full"
             >
               {/* Number watermark */}
               <span className="absolute top-4 right-5 text-6xl font-black text-gray-50 select-none group-hover:text-[#446084]/5 transition-colors">
@@ -57,13 +58,14 @@ export default function WhyUs({ dict }: Props) {
                 {icons[i]}
               </div>
 
-              <h3 className="text-lg font-bold text-[#1a2b3c] mb-3 leading-snug">
+              <h3 className="font-display text-xl font-black text-[#1a2b3c] mb-3 leading-snug uppercase">
                 {item.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
                 {item.body}
               </p>
             </div>
+            </Reveal>
           ))}
         </div>
 
