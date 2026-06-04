@@ -1,27 +1,17 @@
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import BookingForm from "@/components/admin/BookingForm";
-import type { Database } from "@/lib/supabase/types";
-
-type Booking = Database["public"]["Tables"]["bookings"]["Row"];
-type ClientOption = { id: string; full_name: string };
 
 export default async function EditBookingPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const supabase = await createClient();
 
-  const { data: booking } = await supabase
-    .from("bookings")
-    .select("*")
-    .eq("id", id)
-    .single() as { data: Booking | null; error: unknown };
+  const [{ data: booking }, { data: clients }] = await Promise.all([
+    supabase.from("bookings").select("*").eq("id", id).single(),
+    supabase.from("clients").select("id, full_name").order("full_name"),
+  ]);
 
   if (!booking) notFound();
-
-  const { data: clients } = await supabase
-    .from("clients")
-    .select("id, full_name")
-    .order("full_name") as { data: ClientOption[] | null; error: unknown };
 
   return (
     <div className="max-w-2xl">

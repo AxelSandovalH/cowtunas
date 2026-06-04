@@ -16,6 +16,7 @@ export interface Database {
         };
         Insert: Omit<Database["public"]["Tables"]["profiles"]["Row"], "created_at">;
         Update: Partial<Database["public"]["Tables"]["profiles"]["Insert"]>;
+        Relationships: [];
       };
       clients: {
         Row: {
@@ -30,6 +31,7 @@ export interface Database {
         };
         Insert: Omit<Database["public"]["Tables"]["clients"]["Row"], "id" | "created_at" | "updated_at">;
         Update: Partial<Database["public"]["Tables"]["clients"]["Insert"]>;
+        Relationships: [];
       };
       bookings: {
         Row: {
@@ -47,6 +49,15 @@ export interface Database {
         };
         Insert: Omit<Database["public"]["Tables"]["bookings"]["Row"], "id" | "created_at" | "updated_at">;
         Update: Partial<Database["public"]["Tables"]["bookings"]["Insert"]>;
+        Relationships: [
+          {
+            foreignKeyName: "bookings_client_id_fkey";
+            columns: ["client_id"];
+            isOneToOne: false;
+            referencedRelation: "clients";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       maintenance: {
         Row: {
@@ -60,6 +71,7 @@ export interface Database {
         };
         Insert: Omit<Database["public"]["Tables"]["maintenance"]["Row"], "id" | "created_at">;
         Update: Partial<Database["public"]["Tables"]["maintenance"]["Insert"]>;
+        Relationships: [];
       };
       campaigns: {
         Row: {
@@ -74,6 +86,7 @@ export interface Database {
         };
         Insert: Omit<Database["public"]["Tables"]["campaigns"]["Row"], "id" | "created_at">;
         Update: Partial<Database["public"]["Tables"]["campaigns"]["Insert"]>;
+        Relationships: [];
       };
     };
     Views: Record<string, never>;
@@ -82,5 +95,6 @@ export interface Database {
       booking_status: BookingStatus;
       user_role: UserRole;
     };
+    CompositeTypes: Record<string, never>;
   };
 }
