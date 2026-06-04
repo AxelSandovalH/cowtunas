@@ -43,7 +43,7 @@ export default function BookingForm({ clients, booking }: Props) {
 
     const payload = {
       ...form,
-      client_id: form.client_id || null,
+      client_id: form.client_id || undefined,
       anglers: Number(form.anglers),
       total_price: Number(form.total_price),
       deposit_paid: Number(form.deposit_paid),
