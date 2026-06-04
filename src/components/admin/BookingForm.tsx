@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import type { BookingStatus } from "@/lib/supabase/types";
 
 type Client = { id: string; full_name: string };
 type Booking = {
@@ -44,6 +45,7 @@ export default function BookingForm({ clients, booking }: Props) {
     const payload = {
       ...form,
       client_id: form.client_id || undefined,
+      status: form.status as BookingStatus,
       anglers: Number(form.anglers),
       total_price: Number(form.total_price),
       deposit_paid: Number(form.deposit_paid),
