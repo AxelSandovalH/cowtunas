@@ -20,8 +20,30 @@ export default function Footer({ dict, lang }: Props) {
   ];
 
   return (
-    <footer className="bg-[#1a2b3c] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="relative bg-[#0e1621] text-white overflow-hidden">
+      {/* Yellowfin scales wallpaper */}
+      <div className="absolute inset-0">
+        <Image
+          src="/texturatuna.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_30%]"
+        />
+        <div className="absolute inset-0 bg-[#0e1621]/88" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0e1621] to-transparent" />
+      </div>
+
+      {/* Cow-tuna swimming across the footer */}
+      <Image
+        src="/cowtuna-fish.png"
+        alt=""
+        width={280}
+        height={138}
+        className="absolute right-6 bottom-16 w-48 md:w-64 opacity-25 pointer-events-none select-none -scale-x-100"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -87,7 +109,7 @@ export default function Footer({ dict, lang }: Props) {
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-5 text-center text-xs text-gray-500">
+      <div className="relative border-t border-white/10 py-5 text-center text-xs text-gray-500">
         © {year} CowTunas Fishing Charters. {dict.footer.rights}
         <span className="mx-2">·</span>
         <Link href={lang === "en" ? "/es" : "/en"} className="hover:text-white">
