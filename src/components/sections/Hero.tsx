@@ -39,7 +39,7 @@ export default function Hero({ dict, lang }: Props) {
           <div className="rise-in-3 shrink-0">
             <BookButton
               label={dict.hero.cta_primary}
-              className="btn-cow font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-black/30 hover:-translate-y-1"
+              className="btn-cowhide font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-black/30 hover:-translate-y-1"
             />
           </div>
         </div>
