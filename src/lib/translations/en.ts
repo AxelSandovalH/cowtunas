@@ -120,7 +120,7 @@ const en: Translations = {
   contact: {
     title: "Get in Touch",
     subtitle: "Ready to book or have questions? We'd love to hear from you.",
-    phone: "949-294-6790",
+    phone: "+52 624 161 6011",
     email_reservations: "reservations@cowtunas.com",
     email_info: "info@cowtunas.com",
     location: "Cabo San Lucas Marina, Cabo San Lucas, Mexico",
