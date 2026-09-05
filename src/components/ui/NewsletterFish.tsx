@@ -69,11 +69,11 @@ export default function NewsletterFish({ lang }: Props) {
               className="relative w-40 lg:w-48 drop-shadow-2xl"
             >
               <Image
-                src="/icon.jpg"
+                src="/cowtuna-fish.png"
                 alt=""
                 width={400}
-                height={225}
-                className="w-full h-auto rounded-r-2xl"
+                height={218}
+                className="w-full h-auto"
               />
               <span className="absolute -top-3 -right-3 bg-[#14a3c7] text-white font-black text-sm rounded-full px-3 py-1.5 shadow-lg rotate-6">
                 -10%
@@ -93,8 +93,8 @@ export default function NewsletterFish({ lang }: Props) {
             transition={{ type: "spring", damping: 22, stiffness: 160 }}
             className="w-80 bg-[#0e1621] text-white rounded-r-2xl shadow-2xl border border-white/10 border-l-0 overflow-hidden"
           >
-            <div className="relative">
-              <Image src="/icon.jpg" alt="" width={640} height={360} className="w-full h-32 object-cover" />
+            <div className="relative bg-gradient-to-b from-[#14a3c7]/20 to-transparent pt-4 px-6">
+              <Image src="/cowtuna-fish.png" alt="" width={640} height={349} className="w-full h-28 object-contain" />
               <button
                 onClick={dismiss}
                 aria-label="Close"
