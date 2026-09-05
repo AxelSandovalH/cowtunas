@@ -87,6 +87,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
   const [trip, setTrip]       = useState<"half" | "full">("full");
   const [payLoading, setPayLoading] = useState(false);
   const [payError, setPayError]     = useState("");
+  const [submitError, setSubmitError] = useState("");
   const [notes, setNotes]     = useState("");
   const [name, setName]       = useState("");
   const [email, setEmail]     = useState("");
@@ -110,41 +111,66 @@ export default function BookingModal({ lang, open, onClose }: Props) {
   const handleSubmit = async () => {
     if (!date || !name) return;
     setLoading(true);
-    const supabase = createClient();
+    setSubmitError("");
 
-    // Upsert client
-    let clientId: string | null = null;
-    const { data: existing } = await supabase
-      .from("clients")
-      .select("id")
-      .or(`email.eq.${email},phone.eq.${phone}`)
-      .maybeSingle();
+    const timeout = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("timeout")), 12000)
+    );
 
-    if (existing) {
-      clientId = existing.id;
-    } else {
-      const { data: newClient } = await supabase
-        .from("clients")
-        .insert({ full_name: name, email: email || null, phone: phone || null, country: null, notes: null })
-        .select("id")
-        .single();
-      clientId = newClient?.id ?? null;
+    try {
+      await Promise.race([timeout, (async () => {
+        const supabase = createClient();
+
+        // Upsert client (only match on fields that were provided)
+        let clientId: string | null = null;
+        const filters = [
+          email ? `email.eq.${email}` : null,
+          phone ? `phone.eq.${phone}` : null,
+        ].filter(Boolean) as string[];
+
+        if (filters.length) {
+          const { data: existing } = await supabase
+            .from("clients")
+            .select("id")
+            .or(filters.join(","))
+            .maybeSingle();
+          if (existing) clientId = existing.id;
+        }
+
+        if (!clientId) {
+          const { data: newClient, error } = await supabase
+            .from("clients")
+            .insert({ full_name: name, email: email || null, phone: phone || null, country: null, notes: null })
+            .select("id")
+            .single();
+          if (error) throw error;
+          clientId = newClient?.id ?? null;
+        }
+
+        const { error: bookingError } = await supabase.from("bookings").insert({
+          client_id:    clientId,
+          trip_date:    date.toISOString().split("T")[0],
+          anglers,
+          status:       "pending",
+          total_price:  trip === "half" ? 700 : 1200,
+          deposit_paid: 0,
+          expenses:     0,
+          notes:        notes || null,
+        });
+        if (bookingError) throw bookingError;
+      })()]);
+
+      setDone(true);
+    } catch (err) {
+      console.error("booking failed:", err);
+      setSubmitError(
+        en
+          ? "We couldn't save your booking. Please message us on WhatsApp and we'll lock in your date."
+          : "No pudimos guardar tu reserva. Escríbenos por WhatsApp y apartamos tu fecha."
+      );
+    } finally {
+      setLoading(false);
     }
-
-    // Create booking
-    await supabase.from("bookings").insert({
-      client_id:    clientId,
-      trip_date:    date.toISOString().split("T")[0],
-      anglers,
-      status:       "pending",
-      total_price:  trip === "half" ? 700 : 1200,
-      deposit_paid: 0,
-      expenses:     0,
-      notes:        notes || null,
-    });
-
-    setLoading(false);
-    setDone(true);
   };
 
   const stepLabel = [
@@ -383,6 +409,20 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                           {loading ? "…" : en ? "Confirm Booking" : "Confirmar Reserva"}
                         </button>
                       </div>
+                      {submitError && (
+                        <div className="bg-red-50 text-red-600 text-sm rounded-xl px-4 py-3">
+                          {submitError}{" "}
+                          <a
+                            className="underline font-semibold"
+                            href={`https://wa.me/526241616011?text=${encodeURIComponent(
+                              `${en ? "Hi! I want to book" : "Hola! Quiero reservar"} ${date?.toLocaleDateString(en ? "en-US" : "es-MX", { month: "long", day: "numeric" })} · ${anglers} ${en ? "anglers" : "pescadores"} · ${trip === "half" ? (en ? "Half Day" : "Medio Día") : (en ? "Full Day" : "Día Completo")} — ${name}`
+                            )}`}
+                            target="_blank" rel="noopener noreferrer"
+                          >
+                            WhatsApp →
+                          </a>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
