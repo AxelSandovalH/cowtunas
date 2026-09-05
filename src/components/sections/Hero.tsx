@@ -16,6 +16,7 @@ export default function Hero({ dict, lang }: Props) {
           fill
           sizes="100vw"
           priority
+          quality={90}
           className="object-cover object-[68%_30%] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/60" />
