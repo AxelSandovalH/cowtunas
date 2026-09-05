@@ -17,7 +17,7 @@ export default function SunsetCTA({ lang }: Props) {
           alt={en ? "The Kailani on the open water of the Sea of Cortez" : "El Kailani en mar abierto en el Mar de Cortés"}
           fill
           sizes="100vw"
-          className="object-cover object-[6%_center] sm:object-center"
+          className="object-cover object-[0%_center] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       </div>
