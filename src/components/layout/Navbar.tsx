@@ -34,19 +34,14 @@ export default function Navbar({ dict, lang }: Props) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        scrolled
+          ? "bg-white shadow-md py-2"
+          : "bg-white/10 backdrop-blur-md border-b border-white/15 shadow-lg py-3"
       }`}
     >
       <div className="w-full px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href={`/${lang}`}
-          className={`flex items-center gap-3 rounded-2xl px-4 py-2 transition-all duration-300 ${
-            scrolled
-              ? ""
-              : "bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
-          }`}
-        >
+        <Link href={`/${lang}`} className="flex items-center gap-3">
           <Image
             src="/ct-logo.png"
             alt="CowTunas"
