@@ -37,15 +37,22 @@ export default function Navbar({ dict, lang }: Props) {
         scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href={`/${lang}`} className="flex items-center gap-2">
+        <Link
+          href={`/${lang}`}
+          className={`flex items-center gap-3 rounded-2xl px-4 py-2 transition-all duration-300 ${
+            scrolled
+              ? ""
+              : "bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+          }`}
+        >
           <Image
             src="/ct-logo.png"
             alt="CowTunas"
-            width={130}
-            height={96}
-            className="h-16 w-auto md:h-24"
+            width={152}
+            height={112}
+            className="h-20 w-auto md:h-28"
           />
           <span
             className={`font-display font-black uppercase text-3xl md:text-4xl tracking-tight transition-colors ${
