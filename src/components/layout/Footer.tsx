@@ -31,7 +31,7 @@ export default function Footer({ dict, lang }: Props) {
           <p className="text-gray-400 text-sm leading-relaxed">{dict.footer.tagline}</p>
           <div className="flex gap-4 mt-5">
             <a
-              href={`https://wa.me/19492946790`}
+              href={`https://wa.me/526241616011`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"

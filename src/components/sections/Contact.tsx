@@ -35,7 +35,7 @@ export default function Contact({ dict, lang }: Props) {
 
             {/* WhatsApp CTA — most prominent */}
             <a
-              href={`https://wa.me/19492946790?text=${encodeURIComponent(
+              href={`https://wa.me/526241616011?text=${encodeURIComponent(
                 lang === "en"
                   ? "Hi! I'd like to book a fishing charter with CowTunas."
                   : "Hola! Me gustaría reservar un charter de pesca con CowTunas."
@@ -86,7 +86,7 @@ export default function Contact({ dict, lang }: Props) {
                 ),
                 label: lang === "en" ? "Location" : "Ubicación",
                 value: t.location,
-                href: "https://maps.google.com/?q=Puerto+Los+Cabos+Marina+La+Playita",
+                href: "https://maps.google.com/?q=Marina+Cabo+San+Lucas",
               },
             ].map((item) => (
               <a

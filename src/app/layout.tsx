@@ -18,10 +18,10 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   title: "CowTunas Fishing Charters — Cabo San Lucas",
   description:
-    "World-class sportfishing charters in Los Cabos, Mexico. Depart from Puerto Los Cabos Marina with our tournament-winning captain.",
+    "Tuna-specialized sportfishing charters in Cabo San Lucas, Mexico. Depart from the Cabo San Lucas Marina with our tournament-winning captain.",
   openGraph: {
     title: "CowTunas Fishing Charters — Cabo San Lucas",
-    description: "Trophy tuna, Dorado & Marlin. Expert local captain. Puerto Los Cabos Marina.",
+    description: "Trophy tuna specialists — Dorado, Marlin & more on request. Cabo San Lucas Marina.",
     images: ["/gallery/033A0454-scaled.jpg"],
   },
 };

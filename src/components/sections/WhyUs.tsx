@@ -69,30 +69,47 @@ export default function WhyUs({ dict }: Props) {
           ))}
         </div>
 
-        {/* The Kailani at the marina */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <Reveal direction="left" className="sm:col-span-2">
-            <div className="relative rounded-2xl overflow-hidden aspect-[16/9] sm:h-full sm:aspect-auto shadow-lg">
-              <img
-                src="/cowtunas-lateral-sunset.jpg"
-                alt="The Kailani at the Puerto Los Cabos marina at dusk"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+        {/* The Kailani at the marina — collage */}
+        <Reveal className="relative mt-16">
+          {/* Wide marina shot */}
+          <div className="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] shadow-xl">
+            <img
+              src="/cowtunas-lateral-sunset.jpg"
+              alt="The Kailani at the Cabo San Lucas marina at dusk"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-5 left-6 right-6 sm:right-96">
+              <p className="text-white/70 text-xs uppercase tracking-widest mb-1">Our home port</p>
+              <p className="text-white font-display font-black text-2xl sm:text-3xl uppercase">
+                Cabo San Lucas Marina
+              </p>
             </div>
-          </Reveal>
-          <Reveal direction="right">
-            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
+          </div>
+
+          {/* Vertical bow shot pinned like a snapshot (desktop) */}
+          <div className="hidden sm:block absolute -bottom-10 right-8 md:right-14 w-52 md:w-64 rotate-3 hover:rotate-0 transition-transform duration-300">
+            <div className="rounded-2xl overflow-hidden border-8 border-white shadow-2xl aspect-[3/4]">
               <img
                 src="/cowtunas-frente.jpg"
                 alt="The Kailani ready to depart"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
-          </Reveal>
-        </div>
+          </div>
+
+          {/* Stacked on mobile */}
+          <div className="sm:hidden mt-6 rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
+            <img
+              src="/cowtunas-frente.jpg"
+              alt="The Kailani ready to depart"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </Reveal>
 
         {/* Bottom CTA banner */}
-        <div className="mt-16 rounded-2xl bg-[#1a2b3c] px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-24 rounded-2xl bg-[#1a2b3c] px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white/60 text-sm uppercase tracking-widest mb-1">
               Promoted on Cabo Radio 96.3 FM

@@ -15,10 +15,10 @@ const en: Translations = {
     tagline: "World-Class Sportfishing in Los Cabos",
     headline: "Chase the Biggest Tuna\nin Cabo San Lucas",
     subheadline:
-      "Depart from La Playita Marina aboard the 28ft Kailani, skippered by our tournament-winning captain with 35 years on these waters.",
+      "Depart from the Cabo San Lucas Marina aboard the 28ft Kailani, skippered by our tournament-winning captain with 35 years on these waters.",
     cta_primary: "Book Your Charter",
     cta_secondary: "See Our Catches",
-    badge: "Departing from Puerto Los Cabos Marina",
+    badge: "Departing from the Cabo San Lucas Marina",
   },
   whyus: {
     title: "Why Fish With CowTunas?",
@@ -46,7 +46,7 @@ const en: Translations = {
   captain: {
     title: "Meet Your Captain",
     subtitle: "Born and raised in La Playita — fishing is in his blood.",
-    body: "With 35 years of experience navigating the waters of San Jose del Cabo, our captain will take you to the most productive fishing grounds Los Cabos has to offer. Fluent in English and Spanish, he will teach you everything he knows and give you the one-on-one experience of a true local expert.",
+    body: "With 35 years of experience navigating the waters of Los Cabos, our captain will take you to the most productive fishing grounds Los Cabos has to offer. Fluent in English and Spanish, he will teach you everything he knows and give you the one-on-one experience of a true local expert.",
     stats: [
       { value: "35+", label: "Years Experience" },
       { value: "300lb+", label: "Biggest Tuna Caught" },
@@ -123,7 +123,7 @@ const en: Translations = {
     phone: "949-294-6790",
     email_reservations: "reservations@cowtunas.com",
     email_info: "info@cowtunas.com",
-    location: "Puerto Los Cabos Marina, La Playita, San Jose del Cabo, Mexico",
+    location: "Cabo San Lucas Marina, Cabo San Lucas, Mexico",
     form: {
       name: "Full Name",
       email: "Email",
@@ -134,7 +134,7 @@ const en: Translations = {
     },
   },
   footer: {
-    tagline: "World-class sportfishing from Puerto Los Cabos Marina.",
+    tagline: "Tuna-specialized sportfishing from the Cabo San Lucas Marina.",
     links_title: "Pages",
     contact_title: "Contact",
     rights: "All rights reserved.",

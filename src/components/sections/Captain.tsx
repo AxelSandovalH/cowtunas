@@ -62,7 +62,7 @@ export default function Captain({ dict }: Props) {
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <p className="text-white font-bold text-xl">Your Captain</p>
-                <p className="text-white/70 text-sm">La Playita, San Jose del Cabo</p>
+                <p className="text-white/70 text-sm">Cabo San Lucas, B.C.S.</p>
               </div>
             </div>
 

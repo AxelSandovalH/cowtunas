@@ -52,8 +52,8 @@ export default function DayOnWater({ lang }: Props) {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               {en
-                ? "We are a family-run operation out of La Playita that follows all Mexican safety requirements and laws. Fully equipped with top-of-the-line tackle, live bait and safety gear, we deliver top-quality service to every client — and we clean and vacuum-pack your catch at the end of the day."
-                : "Somos una operación familiar de La Playita que cumple todos los requisitos y leyes de seguridad mexicanas. Totalmente equipados con equipo de primera, carnada viva y equipo de seguridad, damos un servicio de calidad a cada cliente — y al final del día limpiamos y empacamos al vacío tu captura."}
+                ? "We are a family-run operation out of the Cabo San Lucas Marina that follows all Mexican safety requirements and laws. We specialize in big tuna — but tell us what you want to chase and we will make it happen. Fully equipped with top-of-the-line tackle and live bait, we clean and vacuum-pack your catch at the end of the day."
+                : "Somos una operación familiar de la Marina de Cabo San Lucas que cumple todos los requisitos y leyes de seguridad mexicanas. Nos especializamos en atún grande — pero dinos qué quieres pescar y lo hacemos posible. Totalmente equipados con equipo de primera y carnada viva, al final del día limpiamos y empacamos al vacío tu captura."}
             </p>
             <a href="#boat" className="inline-flex items-center gap-2 text-[#14a3c7] font-bold text-lg hover:gap-3 transition-all">
               {en ? "Meet the Boat" : "Conoce la Lancha"}

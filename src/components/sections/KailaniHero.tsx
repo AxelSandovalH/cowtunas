@@ -13,7 +13,8 @@ export default function KailaniHero({ lang }: Props) {
         <img
           src="/gallery/DJI_0182-scaled.jpg"
           alt={en ? "The Kailani off the coast of San Jose del Cabo" : "El Kailani frente a la costa de San José del Cabo"}
-          className="w-full h-full object-cover object-[30%_55%]"
+          className="w-full h-full object-cover"
+          style={{ transform: "scale(1.4) translateX(20%)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />
       </div>

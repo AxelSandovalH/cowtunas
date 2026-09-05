@@ -97,14 +97,14 @@ const notIncluded = [
   "Mexican fishing license (~$20 USD)",
   "Food & beverages",
   "Crew gratuity (15–20% recommended)",
-  "Transportation to La Playita",
+  "Transportation to the marina",
 ];
 
 const notIncludedEs = [
   "Licencia de pesca mexicana (~$20 USD)",
   "Comida y bebidas",
   "Propina a la tripulación (15–20% recomendado)",
-  "Transporte a La Playita",
+  "Transporte a la marina",
 ];
 
 export default function Pricing({ lang }: Props) {

@@ -11,7 +11,7 @@ const photos = [
   { src: "/gallery/G0041568-scaled.jpg",      alt: "Big tuna catch",                       span: "" },
   { src: "/gallery/033A0479-1-scaled.jpg",    alt: "Charter guests with their catch",      span: "" },
   { src: "/gallery/iphone3.jpeg",             alt: "Yellowfin tuna",                       span: "" },
-  { src: "/gallery/DJI_0182-scaled.jpg",      alt: "Aerial view departing La Playita",     span: "col-span-2" },
+  { src: "/gallery/DJI_0182-scaled.jpg",      alt: "Aerial view of the Kailani offshore",     span: "col-span-2" },
   { src: "/gallery/033A0479-scaled.jpg",      alt: "Trophy fish on deck",                  span: "" },
   { src: "/gallery/iphone5.jpeg",             alt: "Happy anglers",                        span: "" },
   { src: "/gallery/IMG_9499-1.jpeg",          alt: "Wahoo catch",                          span: "" },
