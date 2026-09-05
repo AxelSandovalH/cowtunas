@@ -15,7 +15,7 @@ const es: Translations = {
     tagline: "Pesca deportiva de clase mundial en Los Cabos",
     headline: "Atrapa los Túnidos más Grandes\nen Cabo San Lucas",
     subheadline:
-      "Zarpa desde la Marina Puerto Los Cabos a bordo del Kailani de 28 pies, al mando del Capitán Nestor, campeón de torneos con 35 años en estas aguas.",
+      "Zarpa desde la Marina Puerto Los Cabos a bordo del Kailani de 28 pies, al mando del capitán, campeón de torneos con 35 años en estas aguas.",
     cta_primary: "Reserva tu Charter",
     cta_secondary: "Ver nuestras capturas",
     badge: "Salida desde Marina Puerto Los Cabos",
@@ -27,7 +27,7 @@ const es: Translations = {
     items: [
       {
         title: "Capitán Campeón de Torneos",
-        body: "El Capitán Nestor tiene 35 años navegando estas aguas y ganó el Torneo Brisbe Tuna Off Shore 2022. Su conocimiento local no tiene rival.",
+        body: "El capitán tiene 35 años navegando estas aguas y ganó el Torneo Brisbe Tuna Off Shore 2022. Su conocimiento local no tiene rival.",
       },
       {
         title: "Experiencia Uno a Uno",
@@ -44,9 +44,9 @@ const es: Translations = {
     ],
   },
   captain: {
-    title: "Conoce al Capitán Nestor",
+    title: "Conoce a Tu Capitán",
     subtitle: "Nacido y criado en La Playita — la pesca corre por sus venas.",
-    body: "Con 35 años de experiencia navegando las aguas de San José del Cabo, el Capitán Nestor te llevará a los mejores sitios de pesca que Los Cabos tiene para ofrecer. Habla inglés y español con fluidez, y te enseñará todo lo que sabe para brindarte la experiencia auténtica de un experto local.",
+    body: "Con 35 años de experiencia navegando las aguas de San José del Cabo, el capitán te llevará a los mejores sitios de pesca que Los Cabos tiene para ofrecer. Habla inglés y español con fluidez, y te enseñará todo lo que sabe para brindarte la experiencia auténtica de un experto local.",
     stats: [
       { value: "35+", label: "Años de Experiencia" },
       { value: "+300 lbs", label: "Atún más grande capturado" },
@@ -74,7 +74,7 @@ const es: Translations = {
       {
         name: "Huésped del Charter de Bobby",
         stars: 5,
-        text: "Recientemente tuve el placer de ir a un charter con Cowtunas en San José del Cabo — fue una experiencia increíble, ¡y el precio fue más bajo que cualquier otro charter en Cabo que hemos contratado! Bobby fue un anfitrión excepcional y el Capitán Nestor nos puso en el lugar correcto en el momento exacto.",
+        text: "Recientemente tuve el placer de ir a un charter con Cowtunas en San José del Cabo — fue una experiencia increíble, ¡y el precio fue más bajo que cualquier otro charter en Cabo que hemos contratado! Bobby fue un anfitrión excepcional y el capitán nos puso en el lugar correcto en el momento exacto.",
       },
       {
         name: "Pescador de Cabo",

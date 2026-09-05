@@ -9,7 +9,7 @@ type Client = { id: string; full_name: string; email: string | null; phone: stri
 const TEMPLATES = [
   {
     label: "🎣 Peak Season",
-    message: "Hi {name}! Peak tuna season is here in Cabo — October through February. Captain Nestor is ready to take you out! Book your charter at cowtunas.com or reply here. 🐟",
+    message: "Hi {name}! Peak tuna season is here in Cabo — October through February. Our captain is ready to take you out! Book your charter at cowtunas.com or reply here. 🐟",
   },
   {
     label: "⭐ Review Request",
@@ -17,7 +17,7 @@ const TEMPLATES = [
   },
   {
     label: "🔁 Return Promo",
-    message: "Hi {name}! It's been a while since your last trip. Come back and fish with Captain Nestor — we'd love to see you again. Special rates for returning guests! 🐠",
+    message: "Hi {name}! It's been a while since your last trip. Come back and fish with our captain — we'd love to see you again. Special rates for returning guests! 🐠",
   },
   {
     label: "🎄 Holiday Special",

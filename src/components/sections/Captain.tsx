@@ -39,7 +39,7 @@ export default function Captain({ dict }: Props) {
               href="#contact"
               className="inline-flex items-center gap-2 bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
             >
-              Fish With Captain Nestor
+              Fish With Our Captain
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
@@ -54,14 +54,14 @@ export default function Captain({ dict }: Props) {
             <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-2xl">
               <Image
                 src="/captain-nestor.jpg"
-                alt="Captain Nestor"
+                alt="Our captain"
                 fill
                 className="object-cover object-top"
               />
               {/* Gradient bottom */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-white font-bold text-xl">Captain Nestor</p>
+                <p className="text-white font-bold text-xl">Your Captain</p>
                 <p className="text-white/70 text-sm">La Playita, San Jose del Cabo</p>
               </div>
             </div>

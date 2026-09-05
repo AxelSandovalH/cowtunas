@@ -15,7 +15,7 @@ const en: Translations = {
     tagline: "World-Class Sportfishing in Los Cabos",
     headline: "Chase the Biggest Tuna\nin Cabo San Lucas",
     subheadline:
-      "Depart from La Playita Marina aboard the 28ft Kailani, skippered by tournament-winning Captain Nestor with 35 years on these waters.",
+      "Depart from La Playita Marina aboard the 28ft Kailani, skippered by our tournament-winning captain with 35 years on these waters.",
     cta_primary: "Book Your Charter",
     cta_secondary: "See Our Catches",
     badge: "Departing from Puerto Los Cabos Marina",
@@ -27,7 +27,7 @@ const en: Translations = {
     items: [
       {
         title: "Tournament-Winning Captain",
-        body: "Captain Nestor has 35 years on these waters and has won the 2022 Brisbe Tuna Off Shore Tournament. His local knowledge is unmatched.",
+        body: "Our captain has 35 years on these waters and has won the 2022 Brisbe Tuna Off Shore Tournament. His local knowledge is unmatched.",
       },
       {
         title: "One-on-One Experience",
@@ -44,9 +44,9 @@ const en: Translations = {
     ],
   },
   captain: {
-    title: "Meet Captain Nestor",
+    title: "Meet Your Captain",
     subtitle: "Born and raised in La Playita — fishing is in his blood.",
-    body: "With 35 years of experience navigating the waters of San Jose del Cabo, Captain Nestor will take you to the most productive fishing grounds Los Cabos has to offer. Fluent in English and Spanish, he will teach you everything he knows and give you the one-on-one experience of a true local expert.",
+    body: "With 35 years of experience navigating the waters of San Jose del Cabo, our captain will take you to the most productive fishing grounds Los Cabos has to offer. Fluent in English and Spanish, he will teach you everything he knows and give you the one-on-one experience of a true local expert.",
     stats: [
       { value: "35+", label: "Years Experience" },
       { value: "300lb+", label: "Biggest Tuna Caught" },
@@ -74,7 +74,7 @@ const en: Translations = {
       {
         name: "Bobby's Charter Guest",
         stars: 5,
-        text: "I recently had the pleasure of going on a fishing charter with Cowtunas in San Jose del Cabo — it was an incredible experience, and the cost was lower than any other charter in Cabo we have booked! Bobby was an exceptional host and Captain Nestor consistently put us in the right place at the right time.",
+        text: "I recently had the pleasure of going on a fishing charter with Cowtunas in San Jose del Cabo — it was an incredible experience, and the cost was lower than any other charter in Cabo we have booked! Bobby was an exceptional host and our captain consistently put us in the right place at the right time.",
       },
       {
         name: "Cabo Angler",
