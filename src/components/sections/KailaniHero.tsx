@@ -54,7 +54,7 @@ export default function KailaniHero({ lang }: Props) {
 
           <a
             href="#boat"
-            className="inline-block bg-[#f7f3ed] hover:bg-white text-[#1a2b3c] font-bold px-10 py-4 text-base sm:text-lg transition-colors shadow-xl"
+            className="inline-block btn-tuna font-bold px-10 py-4 text-base sm:text-lg transition-colors shadow-xl"
           >
             {en ? "Explore the Kailani" : "Conoce el Kailani"}
           </a>
