@@ -23,10 +23,9 @@ export default function Hero({ dict, lang }: Props) {
     offset: ["start start", "end end"],
   });
 
-  // As the user scrolls: fullscreen video shrinks into a framed card
+  // As the user scrolls the video card eases back slightly
   // and cross-fades into a photo of the boat.
-  const frameScale = useTransform(scrollYProgress, [0, 0.85], [1, 0.86]);
-  const frameRadius = useTransform(scrollYProgress, [0, 0.85], [0, 28]);
+  const frameScale = useTransform(scrollYProgress, [0, 0.85], [1, 0.94]);
   const videoOpacity = useTransform(scrollYProgress, [0.2, 0.7], [1, 0]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
   const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
@@ -49,10 +48,21 @@ export default function Hero({ dict, lang }: Props) {
       {/* Sticky viewport */}
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
 
-        {/* Media frame: shrinks + rounds as you scroll */}
+        {/* Canvas background (swap /hero-canvas.jpg for the final photo) */}
+        <div className="absolute inset-0">
+          <img
+            src="/hero-canvas.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0e1621]/70" />
+        </div>
+
+        {/* Media card: the video stays near its native size so it looks sharp */}
         <motion.div
-          className="absolute inset-0 overflow-hidden"
-          style={{ scale: frameScale, borderRadius: frameRadius }}
+          className="relative w-[92%] max-w-4xl aspect-video overflow-hidden rounded-2xl shadow-2xl mt-6"
+          style={{ scale: frameScale }}
         >
           {/* Boat photo (revealed underneath the video) */}
           <img
@@ -74,9 +84,6 @@ export default function Hero({ dict, lang }: Props) {
           >
             <source src="/gallery/VIDEO-2024-02-01-20-27-13.mp4" type="video/mp4" />
           </motion.video>
-
-          {/* Gradients for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
         </motion.div>
 
         {/* Content — anchored to the bottom so the video stays the protagonist */}
