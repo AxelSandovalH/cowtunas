@@ -12,8 +12,8 @@ export default function SunsetCTA({ lang }: Props) {
       {/* Full-bleed sunrise photo */}
       <div className="absolute inset-0">
         <img
-          src="/gallery/iphone5.jpeg"
-          alt={en ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
+          src="/hero-canvas.jpg"
+          alt={en ? "Land's End rock formations in Cabo San Lucas" : "El Arco de Cabo San Lucas"}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />

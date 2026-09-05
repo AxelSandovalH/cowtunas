@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { isValidLang, getDictionary, type Lang } from "@/lib/i18n";
 import Hero from "@/components/sections/Hero";
+import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyUs from "@/components/sections/WhyUs";
 import DayOnWater from "@/components/sections/DayOnWater";
 import KailaniHero from "@/components/sections/KailaniHero";
@@ -28,6 +29,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <Hero dict={dict} lang={lang as Lang} />
+      <VideoShowcase lang={lang as Lang} />
       <WhyUs dict={dict} />
       <DayOnWater lang={lang as Lang} />
       <KailaniHero lang={lang as Lang} />
