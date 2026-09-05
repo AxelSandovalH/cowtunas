@@ -45,7 +45,7 @@ export default function Navbar({ dict, lang }: Props) {
             alt="CowTunas"
             width={72}
             height={72}
-            className="rounded-full w-14 h-14 sm:w-[72px] sm:h-[72px]"
+            className="rounded-full w-14 h-14 md:w-20 md:h-20"
           />
           <span
             className={`font-bold text-xl tracking-tight transition-colors ${
