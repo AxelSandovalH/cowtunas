@@ -13,7 +13,7 @@ const es: Translations = {
   },
   hero: {
     tagline: "Pesca deportiva de clase mundial en Los Cabos",
-    headline: "Atrapa los Túnidos más Grandes\nen Cabo San Lucas",
+    headline: "Persigue al Atún Más Grande",
     subheadline:
       "Zarpa desde la Marina de Cabo San Lucas a bordo del Kailani de 28 pies, al mando del capitán, campeón de torneos con 35 años en estas aguas.",
     cta_primary: "Reserva tu Charter",

@@ -13,7 +13,7 @@ const en: Translations = {
   },
   hero: {
     tagline: "World-Class Sportfishing in Los Cabos",
-    headline: "Chase the Biggest Tuna\nin Cabo San Lucas",
+    headline: "Chase the Biggest Tuna",
     subheadline:
       "Depart from the Cabo San Lucas Marina aboard the 28ft Kailani, skippered by our tournament-winning captain with 35 years on these waters.",
     cta_primary: "Book Your Charter",

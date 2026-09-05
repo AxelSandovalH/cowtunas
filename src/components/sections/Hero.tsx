@@ -25,10 +25,6 @@ export default function Hero({ dict, lang }: Props) {
       <div className="relative z-10 w-full text-white px-4 sm:px-6 pb-24">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
-            <p className="rise-in text-[#f7f3ed]/90 font-bold text-xs uppercase tracking-[0.25em] mb-3"
-              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.5)" }}>
-              {dict.hero.tagline}
-            </p>
             <h1 className="rise-in-2 font-display text-3xl sm:text-4xl lg:text-5xl font-black leading-[1] uppercase tracking-tight max-w-xl"
               style={{ textShadow: "0 4px 40px rgba(0,0,0,0.6)" }}
             >
