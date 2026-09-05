@@ -88,7 +88,7 @@ export default function Navbar({ dict, lang }: Props) {
           {/* Book CTA */}
           <a
             href={`/${lang}#contact`}
-            className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+            className="btn-cow text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
           >
             {dict.nav.book}
           </a>
@@ -136,7 +136,7 @@ export default function Navbar({ dict, lang }: Props) {
               <a
                 href={`/${lang}#contact`}
                 onClick={() => setMenuOpen(false)}
-                className="flex-1 bg-[#d26e4b] text-white text-sm font-semibold px-4 py-2 rounded-lg text-center"
+                className="flex-1 btn-cow text-sm font-semibold px-4 py-2 rounded-lg text-center"
               >
                 {dict.nav.book}
               </a>

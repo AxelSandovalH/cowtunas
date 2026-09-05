@@ -81,7 +81,7 @@ export default function WhyUs({ dict }: Props) {
           </div>
           <a
             href="#contact"
-            className="shrink-0 bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
+            className="shrink-0 btn-cow text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
           >
             Book Your Charter →
           </a>

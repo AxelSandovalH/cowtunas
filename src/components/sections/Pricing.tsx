@@ -135,13 +135,13 @@ export default function Pricing({ lang }: Props) {
             <Reveal key={plan.id} delay={i * 0.1}>
               <div className={`relative rounded-3xl overflow-hidden h-full flex flex-col transition-transform duration-300 hover:-translate-y-1 ${
                 plan.highlight
-                  ? "bg-[#d26e4b] shadow-2xl shadow-[#d26e4b]/30 ring-2 ring-[#d26e4b]"
+                  ? "bg-black shadow-2xl shadow-black/40 ring-2 ring-black"
                   : "bg-white/5 border border-white/10"
               }`}>
 
                 {/* Popular badge */}
                 {plan.badge && (
-                  <div className="absolute top-4 right-4 bg-white text-[#d26e4b] text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">
+                  <div className="absolute top-4 right-4 bg-white text-black text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full">
                     {en ? plan.badge : plan.badgeEs}
                   </div>
                 )}
@@ -200,7 +200,7 @@ export default function Pricing({ lang }: Props) {
                     label={en ? plan.cta : plan.ctaEs}
                     className={`w-full py-4 rounded-2xl font-black uppercase tracking-wider text-sm transition-all duration-200 hover:-translate-y-0.5 ${
                       plan.highlight
-                        ? "bg-white text-[#d26e4b] hover:bg-white/90 shadow-lg"
+                        ? "bg-white text-black hover:bg-white/90 shadow-lg"
                         : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
                     }`}
                   />

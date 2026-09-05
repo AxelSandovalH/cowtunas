@@ -241,7 +241,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                       <button
                         disabled={!date}
                         onClick={() => setStep(2)}
-                        className="mt-5 w-full bg-[#d26e4b] hover:bg-[#bc5e3d] disabled:opacity-40 text-white font-bold py-4 rounded-2xl transition-colors uppercase tracking-wide">
+                        className="mt-5 w-full btn-cow disabled:opacity-40 text-white font-bold py-4 rounded-2xl transition-colors uppercase tracking-wide">
                         {date
                           ? `${en ? "Continue" : "Continuar"} — ${date.toLocaleDateString(en ? "en-US" : "es-MX", { month: "short", day: "numeric" })}`
                           : en ? "Select a date" : "Selecciona una fecha"}
@@ -280,7 +280,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                           ← {en ? "Back" : "Atrás"}
                         </button>
                         <button onClick={() => setStep(3)}
-                          className="flex-1 bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold py-3 rounded-xl transition-colors uppercase tracking-wide">
+                          className="flex-1 btn-cow text-white font-bold py-3 rounded-xl transition-colors uppercase tracking-wide">
                           {en ? "Continue" : "Continuar"} →
                         </button>
                       </div>

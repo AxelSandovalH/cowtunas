@@ -35,7 +35,7 @@ export default function SunsetCTA({ lang }: Props) {
           </h2>
           <BookButton
             label={en ? "Book Your Charter" : "Reserva Tu Charter"}
-            className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-black px-12 py-5 rounded-xl text-base uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-[#d26e4b]/40 hover:-translate-y-1"
+            className="btn-cow text-white font-black px-12 py-5 rounded-xl text-base uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-black/30 hover:-translate-y-1"
           />
         </Reveal>
       </div>

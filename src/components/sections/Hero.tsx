@@ -62,7 +62,7 @@ export default function Hero({ dict, lang }: Props) {
 
         {/* Media card: the video stays near its native size so it looks sharp */}
         <motion.div
-          className="relative w-[92%] max-w-4xl aspect-video overflow-hidden rounded-2xl shadow-2xl mt-6"
+          className="relative w-[94%] max-w-6xl aspect-video overflow-hidden rounded-2xl shadow-2xl mt-4"
           style={{ scale: frameScale }}
         >
           {/* Boat photo (revealed underneath the video) */}
@@ -108,7 +108,7 @@ export default function Hero({ dict, lang }: Props) {
             <motion.div {...fadeUp(0.5)} className="shrink-0">
               <BookButton
                 label={dict.hero.cta_primary}
-                className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-[#d26e4b]/40 hover:-translate-y-1"
+                className="btn-cow text-white font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-black/30 hover:-translate-y-1"
               />
             </motion.div>
           </div>
@@ -122,17 +122,35 @@ export default function Hero({ dict, lang }: Props) {
           style={{ opacity: scrollCueOpacity }}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 pointer-events-none"
         >
-          <span className="text-white/60 text-[11px] uppercase tracking-widest">
-            {lang === "en" ? "Scroll to explore" : "Desliza para explorar"}
-          </span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          <motion.span
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="text-white text-xs font-semibold uppercase tracking-[0.3em]"
           >
-            <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.div>
+            {lang === "en" ? "Scroll to explore" : "Desliza para explorar"}
+          </motion.span>
+          {/* Mouse outline with animated wheel dot */}
+          <div className="w-6 h-10 rounded-full border-2 border-white/70 flex justify-center pt-2">
+            <motion.div
+              animate={{ y: [0, 14, 0], opacity: [1, 0, 1] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1.5 h-1.5 rounded-full bg-white"
+            />
+          </div>
+          {/* Cascading chevrons */}
+          <div className="flex flex-col items-center -space-y-2.5">
+            {[0, 1].map((i) => (
+              <motion.svg
+                key={i}
+                animate={{ y: [0, 6, 0], opacity: [0.3, 1, 0.3] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
+                className="w-6 h-6 text-white"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              </motion.svg>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

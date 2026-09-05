@@ -37,7 +37,7 @@ export default function Captain({ dict }: Props) {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 btn-cow text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
             >
               Fish With Our Captain
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -67,7 +67,7 @@ export default function Captain({ dict }: Props) {
             </div>
 
             {/* Tournament badge */}
-            <div className="absolute -bottom-4 -left-4 bg-[#d26e4b] text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
+            <div className="absolute -bottom-4 -left-4 bg-black text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
               <p className="text-xs uppercase tracking-widest text-white/70 mb-0.5">Tournament Winner</p>
               <p className="font-bold text-sm">2022 Brisbe Tuna</p>
             </div>

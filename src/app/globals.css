@@ -57,3 +57,15 @@ body {
 select.input {
   cursor: pointer;
 }
+
+/* Black CTA that reveals a cow-print pattern on hover */
+.btn-cow {
+  background-color: #111111;
+  color: #ffffff;
+}
+.btn-cow:hover {
+  color: #111111;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'><g fill='%23111111'><path d='M18 12 C34 4 52 8 56 20 C58 32 44 40 30 38 C16 36 8 20 18 12 Z'/><path d='M96 -6 C112 -12 128 -4 130 8 C131 18 118 26 104 22 C90 18 86 0 96 -6 Z'/><path d='M96 154 C112 148 128 156 130 168 C131 178 118 186 104 182 C90 178 86 160 96 154 Z'/><path d='M132 60 C148 54 162 62 162 74 C162 86 148 94 136 90 C122 86 120 66 132 60 Z'/><path d='M-28 60 C-12 54 2 62 2 74 C2 86 -12 94 -24 90 C-38 86 -40 66 -28 60 Z'/><path d='M52 88 C68 80 88 84 92 98 C95 110 80 120 64 117 C48 114 42 96 52 88 Z'/><path d='M10 122 C24 116 38 120 40 132 C42 142 30 150 18 147 C6 144 0 128 10 122 Z'/><path d='M118 116 C130 110 144 114 146 126 C148 136 136 144 124 141 C112 138 108 122 118 116 Z'/></g></svg>");
+  background-size: 160px 160px;
+}

@@ -191,7 +191,7 @@ export default function Contact({ dict, lang }: Props) {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-base"
+                  className="w-full btn-cow text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-base"
                 >
                   {t.form.submit}
                 </button>
