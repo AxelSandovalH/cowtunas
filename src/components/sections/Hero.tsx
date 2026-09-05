@@ -41,34 +41,28 @@ export default function Hero({ dict, lang }: Props) {
         </video>
 
         {/* Layered overlays for drama */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto pt-28">
 
-        {/* Badge */}
-        <motion.div {...fadeUp(0.1)} className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs sm:text-sm font-medium px-4 py-2 rounded-full mb-6">
-          <span className="w-2 h-2 bg-[#d26e4b] rounded-full animate-pulse" />
-          {dict.hero.badge}
-        </motion.div>
-
         {/* Tagline */}
-        <motion.p {...fadeUp(0.2)} className="text-[#d26e4b] font-bold text-sm sm:text-base uppercase tracking-[0.25em] mb-5">
+        <motion.p {...fadeUp(0.2)} className="text-[#d26e4b] font-bold text-xs sm:text-sm uppercase tracking-[0.25em] mb-4">
           {dict.hero.tagline}
         </motion.p>
 
-        {/* Main headline — big, aggressive, impactful */}
+        {/* Main headline */}
         <motion.h1 {...fadeUp(0.3)}
-          className="font-display text-6xl sm:text-7xl lg:text-[7rem] xl:text-[8rem] font-black leading-[0.9] uppercase tracking-tight mb-8 drop-shadow-2xl"
+          className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-[1] uppercase tracking-tight mb-6 max-w-3xl mx-auto"
           style={{ textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
         >
           {dict.hero.headline}
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p {...fadeUp(0.45)} className="text-white/75 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+        <motion.p {...fadeUp(0.45)} className="text-white/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-10">
           {dict.hero.subheadline}
         </motion.p>
 
