@@ -21,7 +21,7 @@ export default function Footer({ dict, lang }: Props) {
 
   return (
     <footer className="relative bg-[#0e1621] text-white overflow-hidden">
-      {/* Yellowfin scales wallpaper */}
+      {/* Wallpaper: tuna flesh / yellowfin scales, split on a slant */}
       <div className="absolute inset-0">
         <Image
           src="/texturatuna.jpg"
@@ -30,6 +30,18 @@ export default function Footer({ dict, lang }: Props) {
           sizes="100vw"
           className="object-cover object-[center_30%]"
         />
+        <div
+          className="absolute inset-0"
+          style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0 100%)" }}
+        >
+          <Image
+            src="/texturacarnetuna.jpg"
+            alt=""
+            fill
+            sizes="60vw"
+            className="object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-[#0e1621]/88" />
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0e1621] to-transparent" />
       </div>
