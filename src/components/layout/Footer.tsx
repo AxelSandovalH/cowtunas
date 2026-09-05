@@ -30,39 +30,18 @@ export default function Footer({ dict, lang }: Props) {
           sizes="100vw"
           className="object-cover object-[center_30%]"
         />
-        <div
-          className="absolute inset-0"
-          style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0 100%)" }}
-        >
-          <Image
-            src="/texturacarnetuna.jpg"
-            alt=""
-            fill
-            sizes="60vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-[#0e1621]/88" />
+        <div className="absolute inset-0 bg-[#0e1621]/72" />
         <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0e1621] to-transparent" />
       </div>
-
-      {/* Cow-tuna swimming across the footer */}
-      <Image
-        src="/cowtuna-fish.png"
-        alt=""
-        width={280}
-        height={138}
-        className="absolute right-6 bottom-16 w-48 md:w-64 opacity-25 pointer-events-none select-none -scale-x-100"
-      />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/ct-logo.png" alt="CowTunas" width={44} height={44} className="rounded-full" />
-            <span className="font-bold text-xl">CowTunas</span>
+            <span className="font-display font-black uppercase text-3xl">CowTunas</span>
           </div>
-          <p className="text-gray-400 text-sm leading-relaxed">{dict.footer.tagline}</p>
+          <p className="text-gray-300 text-base leading-relaxed">{dict.footer.tagline}</p>
           <div className="flex gap-4 mt-5">
             <a
               href={`https://wa.me/526241616011`}
@@ -77,13 +56,13 @@ export default function Footer({ dict, lang }: Props) {
 
         {/* Links */}
         <div>
-          <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <h4 className="font-semibold text-base uppercase tracking-widest text-gray-300 mb-4">
             {dict.footer.links_title}
           </h4>
           <ul className="space-y-2">
             {links.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-gray-300 hover:text-white text-sm transition-colors">
+                <a href={l.href} className="text-gray-200 hover:text-white text-base transition-colors">
                   {l.label}
                 </a>
               </li>
@@ -93,10 +72,10 @@ export default function Footer({ dict, lang }: Props) {
 
         {/* Contact */}
         <div>
-          <h4 className="font-semibold text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <h4 className="font-semibold text-base uppercase tracking-widest text-gray-300 mb-4">
             {dict.footer.contact_title}
           </h4>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-2 text-base text-gray-200">
             <li>
               <a href={`tel:${dict.contact.phone}`} className="hover:text-white transition-colors">
                 📞 {dict.contact.phone}
@@ -121,7 +100,7 @@ export default function Footer({ dict, lang }: Props) {
         </div>
       </div>
 
-      <div className="relative border-t border-white/10 py-5 text-center text-xs text-gray-500">
+      <div className="relative border-t border-white/10 py-5 text-center text-sm text-gray-400">
         © {year} CowTunas Fishing Charters. {dict.footer.rights}
         <span className="mx-2">·</span>
         <Link href={lang === "en" ? "/es" : "/en"} className="hover:text-white">
