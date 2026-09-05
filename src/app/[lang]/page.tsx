@@ -11,6 +11,7 @@ import FAQ from "@/components/sections/FAQ";
 import BookCharter from "@/components/sections/BookCharter";
 import Reviews from "@/components/sections/Reviews";
 import Pricing from "@/components/sections/Pricing";
+import SunsetCTA from "@/components/sections/SunsetCTA";
 import Contact from "@/components/sections/Contact";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
@@ -37,6 +38,7 @@ export default async function HomePage({ params }: Props) {
       <Reviews dict={dict} />
       <Pricing lang={lang as Lang} />
       <FAQ dict={dict} />
+      <SunsetCTA lang={lang as Lang} />
       <Contact dict={dict} lang={lang as Lang} />
       <WhatsAppButton />
     </>
