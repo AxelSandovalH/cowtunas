@@ -140,7 +140,7 @@ export default function CSVImport() {
           {rows.length > 20 && <p className="px-5 py-2 text-xs text-gray-400">...and {rows.length - 20} more</p>}
           <div className="px-5 py-4 border-t border-gray-100">
             <button onClick={handleImport} disabled={loading}
-              className="w-full bg-[#d26e4b] hover:bg-[#bc5e3d] disabled:opacity-60 text-white font-bold py-3 rounded-xl transition-colors">
+              className="w-full bg-[#14a3c7] hover:bg-[#0f89a8] disabled:opacity-60 text-white font-bold py-3 rounded-xl transition-colors">
               {loading ? "Importing…" : `Import ${rows.length} Clients`}
             </button>
           </div>

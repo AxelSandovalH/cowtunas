@@ -22,7 +22,7 @@ export default async function CampaignsPage() {
           <p className="text-gray-400 text-sm mt-1">WhatsApp, Email & Follow-ups</p>
         </div>
         <Link href="/admin/campaigns/new"
-          className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm">
+          className="bg-[#14a3c7] hover:bg-[#0f89a8] text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm">
           + New Campaign
         </Link>
       </div>
@@ -32,7 +32,7 @@ export default async function CampaignsPage() {
         {[
           { label: "Total Sent", value: campaigns?.filter(c => c.sent_at).length ?? 0, color: "text-[#446084]" },
           { label: "Total Recipients", value: campaigns?.reduce((s, c) => s + (c.recipients_count ?? 0), 0) ?? 0, color: "text-green-600" },
-          { label: "Drafts", value: campaigns?.filter(c => !c.sent_at).length ?? 0, color: "text-[#d26e4b]" },
+          { label: "Drafts", value: campaigns?.filter(c => !c.sent_at).length ?? 0, color: "text-[#14a3c7]" },
         ].map(s => (
           <div key={s.label} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
             <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">{s.label}</p>

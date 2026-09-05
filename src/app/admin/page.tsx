@@ -25,7 +25,7 @@ export default async function AdminDashboard() {
   const stats = [
     { label: "Total Revenue", value: `$${totalRevenue.toLocaleString()}`, color: "text-green-600", bg: "bg-green-50" },
     { label: "Net Profit", value: `$${netProfit.toLocaleString()}`, color: "text-[#446084]", bg: "bg-blue-50" },
-    { label: "Upcoming Trips", value: upcoming.length, color: "text-[#d26e4b]", bg: "bg-orange-50" },
+    { label: "Upcoming Trips", value: upcoming.length, color: "text-[#14a3c7]", bg: "bg-orange-50" },
     { label: "Total Clients", value: totalClients, color: "text-purple-600", bg: "bg-purple-50" },
   ];
 
@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
             <h2 className="font-semibold text-[#1a2b3c] mb-4">Quick Actions</h2>
             <div className="space-y-2">
               {[
-                { href: "/admin/bookings/new", label: "New Booking", color: "bg-[#d26e4b] text-white" },
+                { href: "/admin/bookings/new", label: "New Booking", color: "bg-[#14a3c7] text-white" },
                 { href: "/admin/clients/new", label: "Add Client", color: "bg-[#446084] text-white" },
                 { href: "/admin/maintenance/new", label: "Log Maintenance", color: "bg-gray-100 text-[#1a2b3c]" },
                 { href: "/admin/campaigns/new", label: "New Campaign", color: "bg-gray-100 text-[#1a2b3c]" },
@@ -124,7 +124,7 @@ export default async function AdminDashboard() {
             <div className="bg-[#1a2b3c] rounded-2xl p-6 text-white">
               <p className="text-white/50 text-xs uppercase tracking-widest mb-1">Last Maintenance</p>
               <p className="font-bold text-lg">${Number(lastMaintenance.cost).toLocaleString()}</p>
-              <a href="/admin/maintenance" className="text-[#d26e4b] text-xs mt-2 inline-block hover:underline">
+              <a href="/admin/maintenance" className="text-[#14a3c7] text-xs mt-2 inline-block hover:underline">
                 View log →
               </a>
             </div>

@@ -64,7 +64,7 @@ function Calendar({
                 disabled={isPast(d)}
                 onClick={() => onSelect(new Date(year, month, d))}
                 className={`w-full aspect-square rounded-xl text-sm font-medium transition-all duration-150
-                  ${isSel(d) ? "bg-[#d26e4b] text-white shadow-md scale-105" : ""}
+                  ${isSel(d) ? "bg-[#14a3c7] text-white shadow-md scale-105" : ""}
                   ${!isSel(d) && !isPast(d) ? "hover:bg-[#446084]/10 hover:text-[#446084] text-[#1a2b3c]" : ""}
                   ${isPast(d) ? "text-gray-300 cursor-not-allowed" : ""}
                 `}
@@ -179,7 +179,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-                <p className="text-[#d26e4b] text-xs font-bold uppercase tracking-widest mb-1">CowTunas Charter</p>
+                <p className="text-[#14a3c7] text-xs font-bold uppercase tracking-widest mb-1">CowTunas Charter</p>
                 <h2 className="font-display text-3xl font-black text-white uppercase">
                   {done ? (en ? "You're Booked!" : "¡Reservado!") : en ? "Book Your Trip" : "Reserva Tu Viaje"}
                 </h2>
@@ -190,7 +190,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                     {([1, 2, 3] as Step[]).map((s) => (
                       <div key={s} className="flex items-center gap-2">
                         <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
-                          step === s ? "bg-[#d26e4b] text-white" :
+                          step === s ? "bg-[#14a3c7] text-white" :
                           step > s  ? "bg-white/30 text-white" :
                           "bg-white/10 text-white/40"
                         }`}>
@@ -260,7 +260,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                           {[1, 2, 3].map(n => (
                             <button key={n} onClick={() => setAnglers(n)}
                               className={`flex-1 py-3 rounded-xl border-2 font-bold text-lg transition-all ${
-                                anglers === n ? "border-[#d26e4b] bg-[#d26e4b]/5 text-[#d26e4b]" : "border-gray-200 text-gray-400 hover:border-gray-300"
+                                anglers === n ? "border-[#14a3c7] bg-[#14a3c7]/5 text-[#14a3c7]" : "border-gray-200 text-gray-400 hover:border-gray-300"
                               }`}>
                               {n}
                             </button>

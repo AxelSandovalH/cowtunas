@@ -30,7 +30,7 @@ export default function WhyUs({ dict }: Props) {
 
         {/* Header */}
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-widest mb-3">
             The CowTunas Difference
           </p>
           <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-4">
@@ -54,7 +54,7 @@ export default function WhyUs({ dict }: Props) {
               </span>
 
               {/* Icon */}
-              <div className="w-14 h-14 bg-[#446084]/10 rounded-xl flex items-center justify-center text-[#446084] mb-6 group-hover:bg-[#d26e4b]/10 group-hover:text-[#d26e4b] transition-colors">
+              <div className="w-14 h-14 bg-[#446084]/10 rounded-xl flex items-center justify-center text-[#446084] mb-6 group-hover:bg-[#14a3c7]/10 group-hover:text-[#14a3c7] transition-colors">
                 {icons[i]}
               </div>
 

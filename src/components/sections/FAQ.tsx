@@ -14,7 +14,7 @@ export default function FAQ({ dict }: Props) {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-semibold text-sm uppercase tracking-widest mb-3">
             Need to Know
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2b3c]">

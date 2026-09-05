@@ -203,7 +203,7 @@ export default function CampaignForm({ clients }: { clients: Client[] }) {
           Save as Draft
         </button>
         <button type="button" onClick={() => handleSave(true)} disabled={loading || selected.size === 0}
-          className="flex-1 bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-40">
+          className="flex-1 bg-[#14a3c7] hover:bg-[#0f89a8] text-white font-bold py-3 rounded-xl transition-colors disabled:opacity-40">
           {loading ? "Saving…" : channel === "email" ? `Send to ${selected.size} emails` : `Generate ${selected.size} WhatsApp links`}
         </button>
       </div>

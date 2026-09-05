@@ -11,7 +11,7 @@ export default function Boat({ dict }: Props) {
 
         {/* Header */}
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">Your Vessel</p>
+          <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-widest mb-3">Your Vessel</p>
           <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-4">
             {dict.boat.title}
           </h2>
@@ -58,7 +58,7 @@ export default function Boat({ dict }: Props) {
                   key={spec.label}
                   className="flex items-start gap-4 bg-white rounded-xl px-5 py-4 shadow-sm border border-gray-100"
                 >
-                  <div className="w-2 h-2 rounded-full bg-[#d26e4b] mt-2 shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-[#14a3c7] mt-2 shrink-0" />
                   <div>
                     <p className="text-xs text-gray-400 uppercase tracking-widest mb-0.5">
                       {spec.label}

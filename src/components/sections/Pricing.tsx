@@ -116,7 +116,7 @@ export default function Pricing({ lang }: Props) {
 
         {/* Header */}
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-widest mb-3">
             {en ? "Transparent Pricing" : "Precios Transparentes"}
           </p>
           <h2 className="font-display text-5xl sm:text-6xl font-black text-white uppercase mb-4">
@@ -186,7 +186,7 @@ export default function Pricing({ lang }: Props) {
                   <ul className="space-y-3 mb-8 flex-1">
                     {(en ? plan.includes : plan.includesEs).map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <svg className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlight ? "text-white" : "text-[#d26e4b]"}`}
+                        <svg className={`w-4 h-4 mt-0.5 shrink-0 ${plan.highlight ? "text-white" : "text-[#14a3c7]"}`}
                           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>

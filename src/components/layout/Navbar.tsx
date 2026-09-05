@@ -63,7 +63,7 @@ export default function Navbar({ dict, lang }: Props) {
             <a
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-[#d26e4b] ${
+              className={`text-sm font-medium transition-colors hover:text-[#14a3c7] ${
                 scrolled ? "text-[#334862]" : "text-white/90"
               }`}
             >

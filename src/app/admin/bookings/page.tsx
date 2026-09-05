@@ -24,7 +24,7 @@ export default async function BookingsPage() {
         </div>
         <Link
           href="/admin/bookings/new"
-          className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
+          className="bg-[#14a3c7] hover:bg-[#0f89a8] text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
         >
           + New Booking
         </Link>

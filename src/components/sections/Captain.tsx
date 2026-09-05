@@ -13,7 +13,7 @@ export default function Captain({ dict }: Props) {
 
           {/* Text side */}
           <div className="order-2 lg:order-1">
-            <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
+            <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-widest mb-3">
               Your Captain
             </p>
             <h2 className="font-display text-5xl sm:text-6xl font-black text-[#1a2b3c] uppercase mb-3">

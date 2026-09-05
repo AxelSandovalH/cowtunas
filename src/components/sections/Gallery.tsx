@@ -34,7 +34,7 @@ export default function Gallery({ dict, lang }: Props) {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-semibold text-sm uppercase tracking-widest mb-3">
             {lang === "en" ? "On the Water" : "En el Agua"}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -86,7 +86,7 @@ export default function Gallery({ dict, lang }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
           >
-            <svg className="w-5 h-5 text-[#d26e4b]" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-[#14a3c7]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
             {lang === "en" ? "Watch the Charter Video" : "Ver el video del charter"}

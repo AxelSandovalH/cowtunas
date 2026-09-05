@@ -126,7 +126,7 @@ export default function BookingForm({ clients, booking }: Props) {
       <div className="grid grid-cols-2 gap-4 bg-[#f7f3ed] rounded-xl p-4">
         <div>
           <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Balance Due</p>
-          <p className="text-xl font-bold text-[#d26e4b]">${balance.toLocaleString()}</p>
+          <p className="text-xl font-bold text-[#14a3c7]">${balance.toLocaleString()}</p>
         </div>
         <div>
           <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Net Profit</p>

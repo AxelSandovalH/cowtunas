@@ -21,7 +21,7 @@ export default function Contact({ dict, lang }: Props) {
 
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-[#d26e4b] font-semibold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-semibold text-sm uppercase tracking-widest mb-3">
             {lang === "en" ? "Let's Go Fishing" : "Vamos a Pescar"}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#1a2b3c] mb-4">{t.title}</h2>

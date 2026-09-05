@@ -31,7 +31,7 @@ export default function VideoShowcase({ lang }: Props) {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <Reveal>
-          <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-widest mb-3">
             {en ? "Straight from the water" : "Directo desde el mar"}
           </p>
           <h2 className="font-display text-4xl sm:text-5xl font-black text-white uppercase mb-10">
