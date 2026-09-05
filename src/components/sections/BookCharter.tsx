@@ -34,21 +34,9 @@ export default function BookCharter({ lang }: Props) {
             </h2>
             <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-10">
               {en ? (
-                <>
-                  <span className="font-bold italic">Cowtunas.com</span> will take you to well-known banks
-                  and areas like the world-famous <span className="italic">Gordo Banks</span> (your native-born
-                  captain will refer to them as <span className="italic">Wahoo Banks</span>) and other fishing
-                  grounds towards the north, such as <span className="italic">Cardon, La Fortuna, Iman, San
-                  Luis</span> and <span className="italic">Vinorama</span>.
-                </>
+                <>From the world-famous <span className="italic">Gordo Banks</span> to the secret grounds up north.</>
               ) : (
-                <>
-                  <span className="font-bold italic">Cowtunas.com</span> te llevará a bancos reconocidos
-                  como el mundialmente famoso <span className="italic">Gordo Banks</span> (tu capitán local
-                  los llama <span className="italic">Wahoo Banks</span>) y otras zonas de pesca hacia el
-                  norte, como <span className="italic">Cardón, La Fortuna, Imán, San Luis</span> y{" "}
-                  <span className="italic">Vinorama</span>.
-                </>
+                <>Del mundialmente famoso <span className="italic">Gordo Banks</span> a los bancos secretos del norte.</>
               )}
             </p>
             <BookButton

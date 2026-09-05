@@ -27,7 +27,7 @@ const es: Translations = {
     items: [
       {
         title: "Capitán Campeón de Torneos",
-        body: "El capitán tiene 35 años navegando estas aguas y ganó el Torneo Brisbe Tuna Off Shore 2022. Su conocimiento local no tiene rival.",
+        body: "35 años en estas aguas. Campeón del torneo Brisbe Tuna 2022.",
       },
       {
         title: "Experiencia Uno a Uno",

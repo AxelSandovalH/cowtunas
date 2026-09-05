@@ -30,8 +30,8 @@ export default function DayOnWater({ lang }: Props) {
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               {en
-                ? "The best part about being on the ocean is that every day is different. Fishing with Cowtunas you can be sure we are prepared to adapt to changing conditions and do everything we can to give you the best experience possible. Whether you are a first-time angler or a seasoned fisherman, we look forward to having you on board."
-                : "Lo mejor de estar en el mar es que cada día es diferente. Pescando con Cowtunas puedes estar seguro de que estamos preparados para adaptarnos a las condiciones y hacer todo lo posible por darte la mejor experiencia. Seas pescador primerizo o experimentado, nos encantará tenerte a bordo."}
+                ? "Every day out here is different. First trip or fiftieth — we put you on fish."
+                : "Cada día en el mar es diferente. Sea tu primer viaje o el cincuenta — te ponemos sobre los peces."}
             </p>
             <a href="#faq" className="inline-flex items-center gap-2 text-[#14a3c7] font-bold text-lg hover:gap-3 transition-all">
               {en ? "Learn More" : "Saber Más"}
@@ -55,8 +55,8 @@ export default function DayOnWater({ lang }: Props) {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               {en
-                ? "We are a family-run operation out of the Cabo San Lucas Marina that follows all Mexican safety requirements and laws. We specialize in big tuna — but tell us what you want to chase and we will make it happen. Fully equipped with top-of-the-line tackle and live bait, we clean and vacuum-pack your catch at the end of the day."
-                : "Somos una operación familiar de la Marina de Cabo San Lucas que cumple todos los requisitos y leyes de seguridad mexicanas. Nos especializamos en atún grande — pero dinos qué quieres pescar y lo hacemos posible. Totalmente equipados con equipo de primera y carnada viva, al final del día limpiamos y empacamos al vacío tu captura."}
+                ? "Family-run, tuna-specialized, fully equipped. Your catch comes home cleaned and vacuum-packed."
+                : "Operación familiar, especializada en atún, totalmente equipada. Tu captura llega a casa limpia y empacada al vacío."}
             </p>
             <a href="#boat" className="inline-flex items-center gap-2 text-[#14a3c7] font-bold text-lg hover:gap-3 transition-all">
               {en ? "Meet the Boat" : "Conoce la Lancha"}

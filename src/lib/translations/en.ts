@@ -23,15 +23,15 @@ const en: Translations = {
   whyus: {
     title: "Why Fish With CowTunas?",
     subtitle:
-      "We go above and beyond to put you on fish — every single trip.",
+      "We put you on fish. Every trip.",
     items: [
       {
         title: "Tournament-Winning Captain",
-        body: "Our captain has 35 years on these waters and has won the 2022 Brisbe Tuna Off Shore Tournament. His local knowledge is unmatched.",
+        body: "35 years on these waters. 2022 Brisbe Tuna Tournament champion.",
       },
       {
         title: "One-on-One Experience",
-        body: "We keep it personal. You get the full attention of your captain and crew from first light until you're back at the dock.",
+        body: "Your captain and crew, all day, just for you.",
       },
       {
         title: "Secret Local Spots",

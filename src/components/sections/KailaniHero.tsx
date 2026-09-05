@@ -35,25 +35,9 @@ export default function KailaniHero({ lang }: Props) {
 
           {/* Navy info box */}
           <div className="bg-[#1a2b3c]/95 text-white max-w-2xl p-8 sm:p-10 rounded-sm leading-relaxed text-base sm:text-lg mb-8 shadow-2xl">
-            {en ? (
-              <>
-                The Kailani is not just a panga; she is a 28ft Mako built to chase
-                the biggest tuna in the Sea of Cortez. While big cruisers troll the
-                same crowded lanes, the Kailani is fast and nimble — we follow the
-                bite, running to Gordo Banks or north to Vinorama with twin Yamaha
-                200s, tuna tubes full of live bait, and a fish finder loaded with
-                35 years of secret spots.
-              </>
-            ) : (
-              <>
-                El Kailani no es solo una panga; es un Mako de 28 pies construido
-                para perseguir los atunes más grandes del Mar de Cortés. Mientras
-                los cruceros grandes trolean las mismas rutas saturadas, el Kailani
-                es rápido y ágil — seguimos la picada, corriendo a Gordo Banks o al
-                norte hasta Vinorama con dos Yamaha 200, tubos con carnada viva y
-                una sonda cargada con 35 años de puntos secretos.
-              </>
-            )}
+            {en
+              ? "A 28ft Mako built for one thing: big tuna. Twin Yamaha 200s, live bait, and 35 years of secret spots."
+              : "Un Mako de 28 pies hecho para una cosa: atún grande. Dos Yamaha 200, carnada viva y 35 años de puntos secretos."}
           </div>
 
           <a
