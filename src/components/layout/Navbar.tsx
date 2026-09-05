@@ -43,12 +43,12 @@ export default function Navbar({ dict, lang }: Props) {
           <Image
             src="/ct-logo.png"
             alt="CowTunas"
-            width={48}
-            height={48}
-            className="rounded-full"
+            width={72}
+            height={72}
+            className="rounded-full w-14 h-14 sm:w-[72px] sm:h-[72px]"
           />
           <span
-            className={`font-bold text-lg tracking-tight transition-colors ${
+            className={`font-bold text-xl tracking-tight transition-colors ${
               scrolled ? "text-[#334862]" : "text-white"
             }`}
           >

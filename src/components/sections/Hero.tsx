@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
 import type { Lang } from "@/lib/i18n";
@@ -31,21 +31,18 @@ export default function Hero({ dict, lang }: Props) {
   const textOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
   const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
-  // Once the cross-fade to the photo is done, unmount the video entirely so it
-  // can never repaint on top of the photo (Safari repaints opacity-0 videos).
-  const [videoDone, setVideoDone] = useState(false);
-  useMotionValueEvent(scrollYProgress, "change", (p) => {
-    // Hysteresis: once the photo takes over it stays while scrolling down;
-    // the video only comes back after scrolling clearly back up.
-    if (p >= 0.72) setVideoDone(true);
-    else if (p <= 0.5) setVideoDone(false);
-  });
+  // Safari can repaint an opacity-0 <video> over the photo, so once the fade
+  // completes we also hide it with visibility (kept mounted so scrolling back
+  // up restores it seamlessly).
+  const videoVisibility = useTransform(scrollYProgress, (p) =>
+    p >= 0.72 ? "hidden" : "visible"
+  );
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.75;
     }
-  }, [videoDone]);
+  }, []);
 
   return (
     <section ref={sectionRef} className="relative h-[180vh] bg-[#0e1621]">
@@ -64,21 +61,19 @@ export default function Hero({ dict, lang }: Props) {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* Video (fades out on scroll, unmounts once the photo takes over) */}
-          {!videoDone && (
-            <motion.video
-              ref={videoRef}
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-              poster="/hero-bg.jpg"
-              style={{ opacity: videoOpacity }}
-            >
-              <source src="/gallery/VIDEO-2024-02-01-20-27-13.mp4" type="video/mp4" />
-            </motion.video>
-          )}
+          {/* Video (fades out on scroll; hidden entirely once the photo takes over) */}
+          <motion.video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            poster="/hero-bg.jpg"
+            style={{ opacity: videoOpacity, visibility: videoVisibility }}
+          >
+            <source src="/gallery/VIDEO-2024-02-01-20-27-13.mp4" type="video/mp4" />
+          </motion.video>
 
           {/* Gradients for legibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
