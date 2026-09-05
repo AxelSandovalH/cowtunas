@@ -18,7 +18,11 @@ export default function NewsletterFish({ lang }: Props) {
 
   useEffect(() => {
     try {
-      if (localStorage.getItem("ct-newsletter") === "done") return;
+      const v = localStorage.getItem("ct-newsletter");
+      // Subscribers never see it again; a dismissal only lasts 3 days.
+      if (v === "subscribed") return;
+      const dismissedAt = Number(v);
+      if (dismissedAt && Date.now() - dismissedAt < 3 * 24 * 60 * 60 * 1000) return;
     } catch {}
     const t = setTimeout(() => setHidden(false), 4000);
     return () => clearTimeout(t);
@@ -38,12 +42,12 @@ export default function NewsletterFish({ lang }: Props) {
     });
     setLoading(false);
     setDone(true);
-    try { localStorage.setItem("ct-newsletter", "done"); } catch {}
+    try { localStorage.setItem("ct-newsletter", "subscribed"); } catch {}
   };
 
   const dismiss = () => {
     setHidden(true);
-    try { localStorage.setItem("ct-newsletter", "done"); } catch {}
+    try { localStorage.setItem("ct-newsletter", String(Date.now())); } catch {}
   };
 
   if (hidden) return null;
