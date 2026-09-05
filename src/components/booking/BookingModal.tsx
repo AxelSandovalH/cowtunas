@@ -121,41 +121,29 @@ export default function BookingModal({ lang, open, onClose }: Props) {
       await Promise.race([timeout, (async () => {
         const supabase = createClient();
 
-        // Upsert client (only match on fields that were provided)
-        let clientId: string | null = null;
-        const filters = [
-          email ? `email.eq.${email}` : null,
-          phone ? `phone.eq.${phone}` : null,
-        ].filter(Boolean) as string[];
+        // Anonymous visitors can INSERT but never read back (RLS), so we
+        // create the client record blind and carry contact info on the booking.
+        const { error: clientError } = await supabase.from("clients").insert({
+          full_name: name,
+          email: email || null,
+          phone: phone || null,
+          country: null,
+          notes: null,
+        });
+        if (clientError) throw clientError;
 
-        if (filters.length) {
-          const { data: existing } = await supabase
-            .from("clients")
-            .select("id")
-            .or(filters.join(","))
-            .maybeSingle();
-          if (existing) clientId = existing.id;
-        }
-
-        if (!clientId) {
-          const { data: newClient, error } = await supabase
-            .from("clients")
-            .insert({ full_name: name, email: email || null, phone: phone || null, country: null, notes: null })
-            .select("id")
-            .single();
-          if (error) throw error;
-          clientId = newClient?.id ?? null;
-        }
-
+        const contact = [name, phone && `WhatsApp: ${phone}`, email]
+          .filter(Boolean)
+          .join(" · ");
         const { error: bookingError } = await supabase.from("bookings").insert({
-          client_id:    clientId,
+          client_id:    null,
           trip_date:    date.toISOString().split("T")[0],
           anglers,
           status:       "pending",
           total_price:  trip === "half" ? 700 : 1200,
           deposit_paid: 0,
           expenses:     0,
-          notes:        notes || null,
+          notes:        [contact, notes].filter(Boolean).join(" — "),
         });
         if (bookingError) throw bookingError;
       })()]);
