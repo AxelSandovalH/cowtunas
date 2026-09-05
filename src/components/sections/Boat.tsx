@@ -24,7 +24,7 @@ export default function Boat({ dict }: Props) {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
               <Image
-                src="/boat-kailani.jpg"
+                src="/cowtunas-frente.jpg"
                 alt="The Kailani — 28ft Mako"
                 fill
                 className="object-cover"

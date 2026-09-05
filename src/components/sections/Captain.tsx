@@ -53,15 +53,15 @@ export default function Captain({ dict }: Props) {
 
             <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-2xl">
               <Image
-                src="/captain-nestor.jpg"
-                alt="Our captain"
+                src="/gallery/033A0454-scaled.jpg"
+                alt="Happy guests with a trophy yellowfin tuna caught aboard the Kailani"
                 fill
                 className="object-cover object-top"
               />
               {/* Gradient bottom */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <p className="text-white font-bold text-xl">Your Captain</p>
+                <p className="text-white font-bold text-xl">The Proof Is in the Catch</p>
                 <p className="text-white/70 text-sm">Cabo San Lucas, B.C.S.</p>
               </div>
             </div>
