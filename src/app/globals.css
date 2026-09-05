@@ -94,13 +94,14 @@ select.input {
   color: transparent;
   -webkit-text-fill-color: transparent;
   /* outline so the letters stay visible over any background */
-  -webkit-text-stroke: 1.5px #111111;
+  -webkit-text-stroke: 0.5px #111111;
 }
 .word-cow:hover {
-  /* zoom into a spot-heavy patch of the hide for contrast */
+  /* tighter tile of the hide = more spots inside the letters */
   background-image: url("/texturavaca.jpeg");
-  background-size: 300%;
-  background-position: 15% 85%;
+  background-size: 110px;
+  background-repeat: repeat;
+  background-position: 20% 80%;
 }
 .word-tuna:hover {
   background-image: url("/texturacarnetuna.jpg");
