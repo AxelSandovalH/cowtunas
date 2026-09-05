@@ -84,6 +84,9 @@ export default function BookingModal({ lang, open, onClose }: Props) {
   const [step, setStep] = useState<Step>(1);
   const [date, setDate]       = useState<Date | null>(null);
   const [anglers, setAnglers] = useState(2);
+  const [trip, setTrip]       = useState<"half" | "full">("full");
+  const [payLoading, setPayLoading] = useState(false);
+  const [payError, setPayError]     = useState("");
   const [notes, setNotes]     = useState("");
   const [name, setName]       = useState("");
   const [email, setEmail]     = useState("");
@@ -94,7 +97,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
   // Reset on close
   useEffect(() => {
     if (!open) {
-      setTimeout(() => { setStep(1); setDate(null); setAnglers(2); setNotes(""); setName(""); setEmail(""); setPhone(""); setDone(false); }, 400);
+      setTimeout(() => { setStep(1); setDate(null); setAnglers(2); setTrip("full"); setPayError(""); setNotes(""); setName(""); setEmail(""); setPhone(""); setDone(false); }, 400);
     }
   }, [open]);
 
@@ -134,7 +137,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
       trip_date:    date.toISOString().split("T")[0],
       anglers,
       status:       "pending",
-      total_price:  0,
+      total_price:  trip === "half" ? 700 : 1200,
       deposit_paid: 0,
       expenses:     0,
       notes:        notes || null,
@@ -226,9 +229,38 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                       <p className="text-gray-400 text-sm mb-6">
                         {en ? "We'll confirm your booking via WhatsApp or email shortly." : "Confirmaremos tu reserva por WhatsApp o email pronto."}
                       </p>
+                      <button
+                        disabled={payLoading}
+                        onClick={async () => {
+                          setPayLoading(true);
+                          setPayError("");
+                          try {
+                            const res = await fetch("/api/checkout", {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({
+                                trip, lang, email,
+                                tripDate: date?.toISOString().split("T")[0],
+                                anglers,
+                              }),
+                            });
+                            const data = await res.json();
+                            if (res.ok && data.url) { window.location.href = data.url; return; }
+                            setPayError(data.error || (en ? "Payment is unavailable right now." : "El pago no está disponible por ahora."));
+                          } catch {
+                            setPayError(en ? "Payment is unavailable right now." : "El pago no está disponible por ahora.");
+                          }
+                          setPayLoading(false);
+                        }}
+                        className="w-full btn-cow text-white font-black py-3.5 rounded-xl transition-colors uppercase tracking-wide disabled:opacity-50">
+                        {payLoading ? "…" : en
+                          ? `Secure your date — pay 30% deposit ($${trip === "half" ? 210 : 360})`
+                          : `Asegura tu fecha — deposita 30% ($${trip === "half" ? 210 : 360})`}
+                      </button>
+                      {payError && <p className="text-red-500 text-xs mt-2">{payError}</p>}
                       <button onClick={onClose}
-                        className="w-full bg-[#1a2b3c] text-white font-bold py-3 rounded-xl hover:bg-[#446084] transition-colors">
-                        {en ? "Close" : "Cerrar"}
+                        className="w-full mt-3 border border-gray-200 text-gray-500 hover:bg-gray-50 font-semibold py-3 rounded-xl transition-colors">
+                        {en ? "Pay at the dock instead" : "Prefiero pagar en el muelle"}
                       </button>
                     </motion.div>
                   )}
@@ -254,6 +286,23 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                     <motion.div key="step2"
                       initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}
                       className="space-y-5">
+                      <div>
+                        <p className="label">{en ? "Trip Type" : "Tipo de Viaje"}</p>
+                        <div className="grid grid-cols-2 gap-3 mt-2">
+                          {([
+                            { id: "half" as const, label: en ? "Half Day" : "Medio Día", hours: "4 hrs", price: 700 },
+                            { id: "full" as const, label: en ? "Full Day" : "Día Completo", hours: "8 hrs", price: 1200 },
+                          ]).map(o => (
+                            <button key={o.id} onClick={() => setTrip(o.id)}
+                              className={`py-3 px-4 rounded-xl border-2 text-left transition-all ${
+                                trip === o.id ? "border-[#14a3c7] bg-[#14a3c7]/5" : "border-gray-200 hover:border-gray-300"
+                              }`}>
+                              <span className={`block font-bold ${trip === o.id ? "text-[#14a3c7]" : "text-gray-500"}`}>{o.label}</span>
+                              <span className="block text-xs text-gray-400">{o.hours} · ${o.price} USD</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                       <div>
                         <p className="label">{en ? "Number of Anglers" : "Número de Pescadores"}</p>
                         <div className="flex items-center gap-4 mt-2">
@@ -317,6 +366,10 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                         <div className="flex justify-between">
                           <span className="text-gray-500">{en ? "Anglers" : "Pescadores"}</span>
                           <span className="font-semibold">{anglers}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-gray-500">{en ? "Trip" : "Viaje"}</span>
+                          <span className="font-semibold">{trip === "half" ? (en ? "Half Day — $700" : "Medio Día — $700") : (en ? "Full Day — $1,200" : "Día Completo — $1,200")}</span>
                         </div>
                       </div>
 
