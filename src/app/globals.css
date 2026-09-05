@@ -106,3 +106,24 @@ select.input {
 .word-tuna:hover {
   background-image: url("/texturacarnetuna.jpg");
 }
+
+/* CSS-only entrance for above-the-fold content (no JS wait) */
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise-in   { animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.rise-in-2 { animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
+.rise-in-3 { animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+@keyframes pulse-soft { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+.pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+@keyframes wheel-drop { 0% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(14px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+.wheel-drop { animation: wheel-drop 1.6s ease-in-out infinite; }
+@keyframes chev-bob { 0%,100% { transform: translateY(0); opacity: 0.3; } 50% { transform: translateY(6px); opacity: 1; } }
+.chev-bob { animation: chev-bob 1.6s ease-in-out infinite; }
+.chev-bob-2 { animation: chev-bob 1.6s ease-in-out 0.2s infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .rise-in, .rise-in-2, .rise-in-3, .pulse-soft, .wheel-drop, .chev-bob, .chev-bob-2 {
+    animation: none;
+  }
+}

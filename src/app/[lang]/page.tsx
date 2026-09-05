@@ -15,6 +15,7 @@ import Pricing from "@/components/sections/Pricing";
 import SunsetCTA from "@/components/sections/SunsetCTA";
 import Contact from "@/components/sections/Contact";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import NewsletterFish from "@/components/ui/NewsletterFish";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -43,6 +44,7 @@ export default async function HomePage({ params }: Props) {
       <SunsetCTA lang={lang as Lang} />
       <Contact dict={dict} lang={lang as Lang} />
       <WhatsAppButton />
+      <NewsletterFish lang={lang as Lang} />
     </>
   );
 }
