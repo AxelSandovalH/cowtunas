@@ -13,8 +13,8 @@ export default function SunsetCTA({ lang }: Props) {
       {/* Full-bleed sunrise photo */}
       <div className="absolute inset-0">
         <Image
-          src="/gallery/iphone5.jpeg"
-          alt={en ? "The Kailani fishing at sunrise" : "El Kailani pescando al amanecer"}
+          src="/gallery/iphone16.jpeg"
+          alt={en ? "The Kailani on the open water of the Sea of Cortez" : "El Kailani en mar abierto en el Mar de Cortés"}
           fill
           sizes="100vw"
           className="object-cover object-[0%_center] sm:object-center"

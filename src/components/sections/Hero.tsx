@@ -10,6 +10,7 @@ export default function Hero({ dict, lang }: Props) {
     <section className="relative sm:min-h-screen flex flex-col sm:flex-row sm:items-end overflow-hidden bg-[#0e1621]">
       {/* Photo: own block on mobile, full-bleed backdrop on desktop */}
       <div className="relative h-[64vh] sm:h-auto sm:absolute sm:inset-0">
+        {/* Mobile: sharp drone crew photo */}
         <Image
           src="/gallery/DJI_0182-scaled.jpg"
           alt={lang === "en" ? "The Kailani offshore with a full crew fishing" : "El Kailani mar adentro con la tripulación pescando"}
@@ -17,7 +18,17 @@ export default function Hero({ dict, lang }: Props) {
           sizes="100vw"
           priority
           quality={90}
-          className="object-cover object-[42%_center] sm:object-center"
+          className="object-cover object-[42%_center] sm:hidden"
+        />
+        {/* Desktop: sunset hero */}
+        <Image
+          src="/gallery/iphone5.jpeg"
+          alt={lang === "en" ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
+          fill
+          sizes="100vw"
+          priority
+          quality={90}
+          className="object-cover hidden sm:block"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/60" />
       </div>
