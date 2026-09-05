@@ -43,9 +43,9 @@ export default function Navbar({ dict, lang }: Props) {
           <Image
             src="/ct-logo.png"
             alt="CowTunas"
-            width={72}
-            height={72}
-            className="rounded-full w-14 h-14 md:w-20 md:h-20"
+            width={80}
+            height={80}
+            className="h-14 w-auto md:h-20"
           />
           <span
             className={`font-bold text-xl tracking-tight transition-colors ${
