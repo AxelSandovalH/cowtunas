@@ -56,7 +56,8 @@ export default function Hero({ dict, lang }: Props) {
             aria-hidden="true"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#0e1621]/70" />
+          <div className="absolute inset-0 bg-[#0e1621]/55" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
 
         {/* Media card: the video stays near its native size so it looks sharp */}
