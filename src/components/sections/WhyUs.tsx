@@ -69,6 +69,28 @@ export default function WhyUs({ dict }: Props) {
           ))}
         </div>
 
+        {/* The Kailani at the marina */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <Reveal direction="left" className="sm:col-span-2">
+            <div className="relative rounded-2xl overflow-hidden aspect-[16/9] sm:h-full sm:aspect-auto shadow-lg">
+              <img
+                src="/cowtunas-lateral-sunset.jpg"
+                alt="The Kailani at the Puerto Los Cabos marina at dusk"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal direction="right">
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
+              <img
+                src="/cowtunas-frente.jpg"
+                alt="The Kailani ready to depart"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+          </Reveal>
+        </div>
+
         {/* Bottom CTA banner */}
         <div className="mt-16 rounded-2xl bg-[#1a2b3c] px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
