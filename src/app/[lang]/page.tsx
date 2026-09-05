@@ -6,8 +6,10 @@ import Boat from "@/components/sections/Boat";
 import Captain from "@/components/sections/Captain";
 import Gallery from "@/components/sections/Gallery";
 import FAQ from "@/components/sections/FAQ";
+import Reviews from "@/components/sections/Reviews";
 import Pricing from "@/components/sections/Pricing";
 import Contact from "@/components/sections/Contact";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -26,9 +28,11 @@ export default async function HomePage({ params }: Props) {
       <Boat dict={dict} />
       <Captain dict={dict} />
       <Gallery dict={dict} lang={lang as Lang} />
+      <Reviews dict={dict} />
       <Pricing lang={lang as Lang} />
       <FAQ dict={dict} />
       <Contact dict={dict} lang={lang as Lang} />
+      <WhatsAppButton />
     </>
   );
 }
