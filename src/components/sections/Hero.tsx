@@ -41,77 +41,53 @@ export default function Hero({ dict, lang }: Props) {
         </video>
 
         {/* Layered overlays for drama */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto pt-28">
+      {/* Content — anchored to the bottom so the video stays the protagonist */}
+      <div className="absolute inset-x-0 bottom-0 z-10 text-white px-4 sm:px-6 pb-24">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <motion.p {...fadeUp(0.2)} className="text-[#d26e4b] font-bold text-xs uppercase tracking-[0.25em] mb-3">
+              {dict.hero.tagline}
+            </motion.p>
+            <motion.h1 {...fadeUp(0.35)}
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-black leading-[1] uppercase tracking-tight max-w-xl"
+              style={{ textShadow: "0 4px 40px rgba(0,0,0,0.6)" }}
+            >
+              {dict.hero.headline}
+            </motion.h1>
+          </div>
 
-        {/* Tagline */}
-        <motion.p {...fadeUp(0.2)} className="text-[#d26e4b] font-bold text-xs sm:text-sm uppercase tracking-[0.25em] mb-4">
-          {dict.hero.tagline}
-        </motion.p>
-
-        {/* Main headline */}
-        <motion.h1 {...fadeUp(0.3)}
-          className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-[1] uppercase tracking-tight mb-6 max-w-3xl mx-auto"
-          style={{ textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
-        >
-          {dict.hero.headline}
-        </motion.h1>
-
-        {/* Subheadline */}
-        <motion.p {...fadeUp(0.45)} className="text-white/70 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-10">
-          {dict.hero.subheadline}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <BookButton
-            label={dict.hero.cta_primary}
-            className="group relative bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-black px-10 py-5 rounded-2xl text-base uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-[#d26e4b]/40 hover:-translate-y-1 overflow-hidden"
-          />
-          <a
-            href={`/${lang}#gallery`}
-            className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold px-10 py-5 rounded-2xl text-base uppercase tracking-wider transition-all duration-200 hover:-translate-y-1"
-          >
-            {dict.hero.cta_secondary}
-          </a>
-        </motion.div>
-
-        {/* Quick stats */}
-        <motion.div {...fadeUp(0.7)} className="mt-20 grid grid-cols-3 gap-6 max-w-lg mx-auto border-t border-white/10 pt-8">
-          {[
-            { value: "35+", label: lang === "en" ? "Years on the Water" : "Años en el Mar" },
-            { value: "300lb", label: lang === "en" ? "Biggest Tuna" : "Atún más grande" },
-            { value: "5★", label: lang === "en" ? "Guest Rating" : "Calificación" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-display text-3xl sm:text-4xl font-black text-[#d26e4b] leading-none">{stat.value}</div>
-              <div className="text-white/60 text-xs sm:text-sm mt-2 uppercase tracking-wide">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
+          <motion.div {...fadeUp(0.5)} className="shrink-0">
+            <BookButton
+              label={dict.hero.cta_primary}
+              className="bg-[#d26e4b] hover:bg-[#bc5e3d] text-white font-black px-8 py-4 rounded-xl text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:shadow-[#d26e4b]/40 hover:-translate-y-1"
+            />
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.a
+        href={`/${lang}#why-us`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        transition={{ delay: 1.2 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5"
       >
-        <span className="text-white/40 text-xs uppercase tracking-widest">Scroll</span>
+        <span className="text-white/60 text-[11px] uppercase tracking-widest">
+          {lang === "en" ? "Scroll to explore" : "Desliza para explorar"}
+        </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <svg className="w-5 h-5 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </motion.div>
-      </motion.div>
+      </motion.a>
     </section>
   );
 }
