@@ -53,7 +53,7 @@ export default function Boat({ dict }: Props) {
               every detail is dialed in for one purpose: putting you on fish.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="hidden sm:grid sm:grid-cols-2 gap-3">
               {dict.boat.specs.map((spec) => (
                 <div
                   key={spec.label}

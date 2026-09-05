@@ -19,9 +19,10 @@ export default function Reviews({ dict }: Props) {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Mobile: horizontal snap carousel · Desktop: 3-column grid */}
+        <div className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {dict.reviews.items.map((review, i) => (
-            <Reveal key={review.name} delay={i * 0.12}>
+            <Reveal key={review.name} delay={i * 0.12} className="w-[85%] sm:w-[60%] md:w-auto shrink-0 md:shrink snap-center">
               <div className="h-full bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col">
                 <div className="flex gap-1 mb-5">
                   {Array.from({ length: review.stars }).map((_, s) => (
