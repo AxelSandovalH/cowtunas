@@ -6,6 +6,7 @@ import Boat from "@/components/sections/Boat";
 import Captain from "@/components/sections/Captain";
 import Gallery from "@/components/sections/Gallery";
 import FAQ from "@/components/sections/FAQ";
+import BookCharter from "@/components/sections/BookCharter";
 import Reviews from "@/components/sections/Reviews";
 import Pricing from "@/components/sections/Pricing";
 import Contact from "@/components/sections/Contact";
@@ -27,6 +28,7 @@ export default async function HomePage({ params }: Props) {
       <WhyUs dict={dict} />
       <Boat dict={dict} />
       <Captain dict={dict} />
+      <BookCharter lang={lang as Lang} />
       <Gallery dict={dict} lang={lang as Lang} />
       <Reviews dict={dict} />
       <Pricing lang={lang as Lang} />

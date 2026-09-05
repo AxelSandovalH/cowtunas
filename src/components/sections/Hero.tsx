@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
 import type { Lang } from "@/lib/i18n";
@@ -25,20 +25,27 @@ export default function Hero({ dict, lang }: Props) {
 
   // As the user scrolls: fullscreen video shrinks into a framed card
   // and cross-fades into a photo of the boat.
-  const frameScale = useTransform(scrollYProgress, [0, 0.9], [1, 0.86]);
-  const frameRadius = useTransform(scrollYProgress, [0, 0.9], [0, 28]);
-  const videoOpacity = useTransform(scrollYProgress, [0.25, 0.75], [1, 0]);
+  const frameScale = useTransform(scrollYProgress, [0, 0.85], [1, 0.86]);
+  const frameRadius = useTransform(scrollYProgress, [0, 0.85], [0, 28]);
+  const videoOpacity = useTransform(scrollYProgress, [0.2, 0.7], [1, 0]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
   const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+  // Once the cross-fade to the photo is done, unmount the video entirely so it
+  // can never repaint on top of the photo (Safari repaints opacity-0 videos).
+  const [videoDone, setVideoDone] = useState(false);
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    setVideoDone(p >= 0.72);
+  });
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.75;
     }
-  }, []);
+  }, [videoDone]);
 
   return (
-    <section ref={sectionRef} className="relative h-[220vh] bg-[#0e1621]">
+    <section ref={sectionRef} className="relative h-[180vh] bg-[#0e1621]">
       {/* Sticky viewport */}
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
 
@@ -54,19 +61,21 @@ export default function Hero({ dict, lang }: Props) {
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* Video (fades out on scroll) */}
-          <motion.video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            poster="/hero-bg.jpg"
-            style={{ opacity: videoOpacity }}
-          >
-            <source src="/gallery/VIDEO-2024-02-01-20-27-13.mp4" type="video/mp4" />
-          </motion.video>
+          {/* Video (fades out on scroll, unmounts once the photo takes over) */}
+          {!videoDone && (
+            <motion.video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              poster="/hero-bg.jpg"
+              style={{ opacity: videoOpacity }}
+            >
+              <source src="/gallery/VIDEO-2024-02-01-20-27-13.mp4" type="video/mp4" />
+            </motion.video>
+          )}
 
           {/* Gradients for legibility */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
