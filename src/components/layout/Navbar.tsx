@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BookButton from "@/components/booking/BookButton";
 import type { Lang } from "@/lib/i18n";
 import type { Translations } from "@/lib/translations/types";
 
@@ -87,12 +88,10 @@ export default function Navbar({ dict, lang }: Props) {
           </Link>
 
           {/* Book CTA */}
-          <a
-            href={`/${lang}#contact`}
+          <BookButton
+            label={dict.nav.book}
             className="btn-cow text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
-          >
-            {dict.nav.book}
-          </a>
+          />
         </div>
 
         {/* Mobile hamburger */}
@@ -134,13 +133,10 @@ export default function Navbar({ dict, lang }: Props) {
               >
                 {other.toUpperCase()}
               </Link>
-              <a
-                href={`/${lang}#contact`}
-                onClick={() => setMenuOpen(false)}
+              <BookButton
+                label={dict.nav.book}
                 className="flex-1 btn-cow text-sm font-semibold px-4 py-2 rounded-lg text-center"
-              >
-                {dict.nav.book}
-              </a>
+              />
             </div>
           </nav>
         </div>

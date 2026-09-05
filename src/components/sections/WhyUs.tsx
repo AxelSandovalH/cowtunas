@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BookButton from "@/components/booking/BookButton";
 import Reveal from "@/components/ui/Reveal";
 import type { Translations } from "@/lib/translations/types";
 
@@ -125,12 +126,10 @@ export default function WhyUs({ dict }: Props) {
               Ready for the trip of a lifetime?
             </p>
           </div>
-          <a
-            href="#contact"
+          <BookButton
+            label="Book Your Charter →"
             className="shrink-0 btn-cow text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
-          >
-            Book Your Charter →
-          </a>
+          />
         </div>
 
       </div>

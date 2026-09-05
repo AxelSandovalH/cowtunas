@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
 import type { Lang } from "@/lib/i18n";
 
@@ -8,12 +8,6 @@ type Props = { dict: Translations; lang: Lang };
 
 export default function Contact({ dict, lang }: Props) {
   const t = dict.contact;
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
 
   return (
     <section id="contact" className="py-24 bg-white">
@@ -109,94 +103,28 @@ export default function Contact({ dict, lang }: Props) {
 
           {/* Form column */}
           <div className="lg:col-span-3">
-            {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-16 bg-[#f7f3ed] rounded-2xl">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-[#1a2b3c] mb-2">
-                  {lang === "en" ? "Message Sent!" : "¡Mensaje enviado!"}
-                </h3>
-                <p className="text-gray-500">
-                  {lang === "en"
-                    ? "We'll get back to you as soon as possible."
-                    : "Te responderemos lo antes posible."}
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="bg-[#f7f3ed] rounded-2xl p-8 space-y-5"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                      {t.form.name}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[#1a2b3c] text-sm focus:outline-none focus:border-[#446084] focus:ring-2 focus:ring-[#446084]/20 transition"
-                      placeholder="John Smith"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                      {t.form.phone}
-                    </label>
-                    <input
-                      type="tel"
-                      className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[#1a2b3c] text-sm focus:outline-none focus:border-[#446084] focus:ring-2 focus:ring-[#446084]/20 transition"
-                      placeholder="+1 (555) 000-0000"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                    {t.form.email}
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[#1a2b3c] text-sm focus:outline-none focus:border-[#446084] focus:ring-2 focus:ring-[#446084]/20 transition"
-                    placeholder="you@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                    {t.form.subject}
-                  </label>
-                  <select className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[#1a2b3c] text-sm focus:outline-none focus:border-[#446084] focus:ring-2 focus:ring-[#446084]/20 transition">
-                    <option>{lang === "en" ? "Book a Charter" : "Reservar un Charter"}</option>
-                    <option>{lang === "en" ? "Pricing Info" : "Información de Precios"}</option>
-                    <option>{lang === "en" ? "General Question" : "Pregunta General"}</option>
-                    <option>{lang === "en" ? "Other" : "Otro"}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                    {t.form.message}
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-[#1a2b3c] text-sm focus:outline-none focus:border-[#446084] focus:ring-2 focus:ring-[#446084]/20 transition resize-none"
-                    placeholder={lang === "en" ? "Preferred dates, number of anglers, any questions..." : "Fechas preferidas, número de pescadores, preguntas..."}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn-cow text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-base"
-                >
-                  {t.form.submit}
-                </button>
-              </form>
-            )}
+            <div className="h-full flex flex-col items-center justify-center text-center bg-[#f7f3ed] rounded-2xl p-10">
+              <p className="text-[#14a3c7] font-bold text-xs uppercase tracking-widest mb-2">
+                {lang === "en" ? "One click away" : "A un clic"}
+              </p>
+              <h3 className="font-display text-3xl font-black text-[#1a2b3c] uppercase mb-3">
+                {lang === "en" ? "Book in under a minute" : "Reserva en menos de un minuto"}
+              </h3>
+              <p className="text-gray-500 mb-8 max-w-sm">
+                {lang === "en"
+                  ? "Pick your date, tell us how many anglers, and you're set. We confirm by WhatsApp or email."
+                  : "Elige tu fecha, dinos cuántos pescadores y listo. Confirmamos por WhatsApp o correo."}
+              </p>
+              <BookButton
+                label={lang === "en" ? "Start Booking" : "Comenzar Reserva"}
+                className="btn-cow text-white font-black px-10 py-4 rounded-xl text-sm uppercase tracking-wider shadow-xl"
+              />
+              <p className="text-gray-400 text-xs mt-6">
+                {lang === "en"
+                  ? "Questions? Message us on WhatsApp — we reply fast."
+                  : "¿Dudas? Escríbenos por WhatsApp — respondemos rápido."}
+              </p>
+            </div>
           </div>
         </div>
 
