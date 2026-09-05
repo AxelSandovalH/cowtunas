@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { RevenueByMonthChart, BookingStatusChart } from "@/components/admin/DashboardCharts";
 
 export default async function AdminDashboard() {
   const supabase = await createClient();
@@ -33,6 +34,27 @@ export default async function AdminDashboard() {
     .sort((a, b) => new Date(b.trip_date).getTime() - new Date(a.trip_date).getTime())
     .slice(0, 5);
 
+  // Last 6 months revenue/expenses (cancelled excluded)
+  const months: { month: string; revenue: number; expenses: number }[] = [];
+  const now = new Date();
+  for (let i = 5; i >= 0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+    const inMonth = bookings.filter(
+      (b) => b.status !== "cancelled" && b.trip_date?.startsWith(key)
+    );
+    months.push({
+      month: d.toLocaleDateString("en-US", { month: "short" }),
+      revenue: inMonth.reduce((s, b) => s + Number(b.total_price), 0),
+      expenses: inMonth.reduce((s, b) => s + Number(b.expenses), 0),
+    });
+  }
+
+  const statusCounts = ["pending", "confirmed", "completed", "cancelled"].map((status) => ({
+    status,
+    count: bookings.filter((b) => b.status === status).length,
+  }));
+
   return (
     <div>
       <div className="mb-8">
@@ -50,6 +72,18 @@ export default async function AdminDashboard() {
             <p className={`text-3xl font-black ${stat.color}`}>{stat.value}</p>
           </div>
         ))}
+      </div>
+
+      {/* Charts */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="lg:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <h2 className="font-semibold text-[#1a2b3c] mb-4">Revenue — last 6 months</h2>
+          <RevenueByMonthChart data={months} />
+        </div>
+        <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <h2 className="font-semibold text-[#1a2b3c] mb-4">Bookings by status</h2>
+          <BookingStatusChart data={statusCounts} />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

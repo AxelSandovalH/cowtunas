@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
+import BookingsCalendar from "@/components/admin/BookingsCalendar";
 
 const statusColor: Record<string, string> = {
   pending:   "bg-yellow-100 text-yellow-700",
@@ -28,6 +29,11 @@ export default async function BookingsPage() {
         >
           + New Booking
         </Link>
+      </div>
+
+      {/* Month calendar */}
+      <div className="mb-8">
+        <BookingsCalendar bookings={bookings ?? []} />
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
