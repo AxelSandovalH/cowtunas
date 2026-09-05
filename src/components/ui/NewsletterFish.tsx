@@ -24,7 +24,7 @@ export default function NewsletterFish({ lang }: Props) {
       const dismissedAt = Number(v);
       if (dismissedAt && Date.now() - dismissedAt < 3 * 24 * 60 * 60 * 1000) return;
     } catch {}
-    const t = setTimeout(() => setHidden(false), 4000);
+    const t = setTimeout(() => setHidden(false), 1200);
     return () => clearTimeout(t);
   }, []);
 
