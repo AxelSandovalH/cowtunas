@@ -7,23 +7,23 @@ type Props = { dict: Translations; lang: Lang };
 
 export default function Hero({ dict, lang }: Props) {
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden">
-      {/* Sunset photo background */}
-      <div className="absolute inset-0">
+    <section className="relative sm:min-h-screen flex flex-col sm:flex-row sm:items-end overflow-hidden bg-[#0e1621]">
+      {/* Photo: own block on mobile, full-bleed backdrop on desktop */}
+      <div className="relative h-[64vh] sm:h-auto sm:absolute sm:inset-0">
         <Image
-          src="/gallery/iphone5.jpeg"
-          alt={lang === "en" ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
+          src="/gallery/DJI_0182-scaled.jpg"
+          alt={lang === "en" ? "The Kailani offshore with a full crew fishing" : "El Kailani mar adentro con la tripulación pescando"}
           fill
           sizes="100vw"
           priority
           quality={90}
-          className="object-cover object-[68%_30%] sm:object-center"
+          className="object-cover object-[42%_center] sm:object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/60" />
       </div>
 
-      {/* Content — anchored to the bottom */}
-      <div className="relative z-10 w-full text-white px-4 sm:px-6 pb-24">
+      {/* Content: solid navy band under the photo on mobile, overlaid on desktop */}
+      <div className="relative z-10 w-full text-white px-4 sm:px-6 py-10 sm:py-0 sm:pb-24">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
             <h1 className="rise-in-2 font-display text-3xl sm:text-4xl lg:text-5xl font-black leading-[1] uppercase tracking-tight max-w-xl"
