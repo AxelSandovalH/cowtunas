@@ -29,7 +29,7 @@ export default function Contact({ dict, lang }: Props) {
 
             {/* WhatsApp CTA — most prominent */}
             <a
-              href={`https://wa.me/526241616011?text=${encodeURIComponent(
+              href={`https://wa.me/523141222146?text=${encodeURIComponent(
                 lang === "en"
                   ? "Hi! I'd like to book a fishing charter with CowTunas."
                   : "Hola! Me gustaría reservar un charter de pesca con CowTunas."

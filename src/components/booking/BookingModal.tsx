@@ -402,7 +402,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                           {submitError}{" "}
                           <a
                             className="underline font-semibold"
-                            href={`https://wa.me/526241616011?text=${encodeURIComponent(
+                            href={`https://wa.me/523141222146?text=${encodeURIComponent(
                               `${en ? "Hi! I want to book" : "Hola! Quiero reservar"} ${date?.toLocaleDateString(en ? "en-US" : "es-MX", { month: "long", day: "numeric" })} · ${anglers} ${en ? "anglers" : "pescadores"} · ${trip === "half" ? (en ? "Half Day" : "Medio Día") : (en ? "Full Day" : "Día Completo")} — ${name}`
                             )}`}
                             target="_blank" rel="noopener noreferrer"

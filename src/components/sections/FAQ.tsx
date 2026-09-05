@@ -50,7 +50,7 @@ export default function FAQ({ dict, lang }: Props) {
             {en ? "Something else on your mind?" : "¿Algo más que quieras saber?"}
           </p>
           <a
-            href={`https://wa.me/526241616011?text=${encodeURIComponent(
+            href={`https://wa.me/523141222146?text=${encodeURIComponent(
               en ? "Hi! I have a question about the charter." : "Hola! Tengo una pregunta sobre el charter."
             )}`}
             target="_blank"

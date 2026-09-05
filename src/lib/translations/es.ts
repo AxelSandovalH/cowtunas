@@ -120,7 +120,7 @@ const es: Translations = {
   contact: {
     title: "Contáctanos",
     subtitle: "¿Listo para reservar o tienes preguntas? Nos encantaría escucharte.",
-    phone: "+52 624 161 6011",
+    phone: "+52 314 122 2146",
     email_reservations: "reservations@cowtunas.com",
     email_info: "info@cowtunas.com",
     location: "Marina de Cabo San Lucas, Cabo San Lucas, México",
