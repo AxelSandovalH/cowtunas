@@ -6,7 +6,6 @@ import WhyUs from "@/components/sections/WhyUs";
 import DayOnWater from "@/components/sections/DayOnWater";
 import KailaniHero from "@/components/sections/KailaniHero";
 import Boat from "@/components/sections/Boat";
-import Species from "@/components/sections/Species";
 import FAQ from "@/components/sections/FAQ";
 import BookCharter from "@/components/sections/BookCharter";
 import Reviews from "@/components/sections/Reviews";
@@ -34,11 +33,10 @@ export default async function HomePage({ params }: Props) {
       <DayOnWater lang={lang as Lang} />
       <KailaniHero lang={lang as Lang} />
       <Boat dict={dict} />
-      <Species lang={lang as Lang} />
       <BookCharter lang={lang as Lang} />
       <Reviews dict={dict} />
       <Pricing lang={lang as Lang} />
-      <FAQ dict={dict} />
+      <FAQ dict={dict} lang={lang as Lang} />
       <SunsetCTA lang={lang as Lang} />
       <Contact dict={dict} lang={lang as Lang} />
       <WhatsAppButton />
