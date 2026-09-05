@@ -20,6 +20,7 @@ export default function Hero({ dict, lang }: Props) {
       <div className="absolute inset-0">
         <img
           src="/gallery/iphone5.jpeg"
+          fetchPriority="high"
           alt={lang === "en" ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
           className="w-full h-full object-cover"
         />

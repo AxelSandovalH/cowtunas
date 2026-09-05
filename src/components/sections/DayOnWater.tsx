@@ -14,7 +14,7 @@ export default function DayOnWater({ lang }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Reveal direction="left">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/gallery/IMG_9496-1.jpeg"
                 alt={en ? "Trophy yellowfin tuna hung at the dock" : "Atún aleta amarilla de trofeo colgado en el muelle"}
                 className="absolute inset-0 w-full h-full object-cover object-top"
@@ -64,7 +64,7 @@ export default function DayOnWater({ lang }: Props) {
           </Reveal>
           <Reveal direction="right">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/gallery/iphone14-scaled.jpeg"
                 alt={en ? "Happy anglers showing off their mahi-mahi catch" : "Pescadores felices mostrando sus dorados"}
                 className="absolute inset-0 w-full h-full object-cover"

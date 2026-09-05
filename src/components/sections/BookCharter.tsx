@@ -11,7 +11,7 @@ export default function BookCharter({ lang }: Props) {
     <section id="book-charter" className="relative overflow-hidden">
       {/* Full-bleed photo */}
       <div className="absolute inset-0">
-        <img
+        <img loading="lazy" decoding="async"
           src="/gallery/G0041568-scaled.jpg"
           alt={en ? "Happy angler holding a mahi-mahi aboard the Kailani" : "Pescador feliz sosteniendo un dorado a bordo del Kailani"}
           className="w-full h-full object-cover object-[35%_30%]"

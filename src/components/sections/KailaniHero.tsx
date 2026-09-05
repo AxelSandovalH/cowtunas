@@ -10,7 +10,7 @@ export default function KailaniHero({ lang }: Props) {
     <section className="relative overflow-hidden">
       {/* Full-bleed boat photo */}
       <div className="absolute inset-0">
-        <img
+        <img loading="lazy" decoding="async"
           src="/gallery/DJI_0182-scaled.jpg"
           alt={en ? "The Kailani off the coast of San Jose del Cabo" : "El Kailani frente a la costa de San José del Cabo"}
           className="w-full h-full object-cover"

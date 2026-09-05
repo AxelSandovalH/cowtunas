@@ -73,7 +73,7 @@ export default function WhyUs({ dict }: Props) {
         <Reveal className="relative mt-16">
           {/* Wide marina shot */}
           <div className="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] shadow-xl">
-            <img
+            <img loading="lazy" decoding="async"
               src="/cowtunas-lateral-sunset.jpg"
               alt="The Kailani at the Cabo San Lucas marina at dusk"
               className="absolute inset-0 w-full h-full object-cover"
@@ -90,7 +90,7 @@ export default function WhyUs({ dict }: Props) {
           {/* Vertical bow shot pinned like a snapshot (desktop) */}
           <div className="hidden sm:block absolute -bottom-10 right-8 md:right-14 w-52 md:w-64 rotate-3 hover:rotate-0 transition-transform duration-300">
             <div className="rounded-2xl overflow-hidden border-8 border-white shadow-2xl aspect-[3/4]">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/cowtunas-frente.jpg"
                 alt="The Kailani ready to depart"
                 className="w-full h-full object-cover"
@@ -100,7 +100,7 @@ export default function WhyUs({ dict }: Props) {
 
           {/* Stacked on mobile */}
           <div className="sm:hidden mt-6 rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
-            <img
+            <img loading="lazy" decoding="async"
               src="/cowtunas-frente.jpg"
               alt="The Kailani ready to depart"
               className="w-full h-full object-cover"
