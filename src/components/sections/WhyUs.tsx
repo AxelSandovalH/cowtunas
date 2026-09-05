@@ -95,8 +95,8 @@ export default function WhyUs({ dict }: Props) {
           <div className="hidden sm:block absolute -bottom-10 right-8 md:right-14 w-52 md:w-64 rotate-3 hover:rotate-0 transition-transform duration-300">
             <div className="rounded-2xl overflow-hidden border-8 border-white shadow-2xl aspect-[3/4]">
               <Image
-          src="/cowtunas-frente.jpg"
-          alt="The Kailani ready to depart"
+          src="/gallery/iphone3.jpeg"
+          alt="Angler with a yellowfin tuna aboard the Kailani"
           fill
           sizes="(max-width: 640px) 100vw, 256px"
           className="object-cover"
@@ -107,8 +107,8 @@ export default function WhyUs({ dict }: Props) {
           {/* Stacked on mobile */}
           <div className="sm:hidden mt-6 rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
             <Image
-          src="/cowtunas-frente.jpg"
-          alt="The Kailani ready to depart"
+          src="/gallery/iphone3.jpeg"
+          alt="Angler with a yellowfin tuna aboard the Kailani"
           fill
           sizes="(max-width: 640px) 100vw, 256px"
           className="object-cover"
