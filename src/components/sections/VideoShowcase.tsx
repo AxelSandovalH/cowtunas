@@ -17,8 +17,19 @@ export default function VideoShowcase({ lang }: Props) {
   }, []);
 
   return (
-    <section className="py-24 bg-[#0e1621]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <section className="relative py-24 overflow-hidden">
+      {/* Land's End canvas background */}
+      <div className="absolute inset-0">
+        <img
+          src="/hero-canvas.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0e1621]/60" />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <Reveal>
           <p className="text-[#d26e4b] font-bold text-sm uppercase tracking-widest mb-3">
             {en ? "Straight from the water" : "Directo desde el mar"}

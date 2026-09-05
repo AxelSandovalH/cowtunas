@@ -83,3 +83,20 @@ select.input {
   background-size: cover;
   background-position: center;
 }
+
+/* Wordmark hovers: texture clipped inside the letters */
+.word-cow:hover,
+.word-tuna:hover {
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.word-cow:hover {
+  background-image: url("/texturavaca.jpeg");
+}
+.word-tuna:hover {
+  background-image: url("/texturacarnetuna.jpg");
+}

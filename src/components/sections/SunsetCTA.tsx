@@ -12,9 +12,9 @@ export default function SunsetCTA({ lang }: Props) {
       {/* Full-bleed sunrise photo */}
       <div className="absolute inset-0">
         <img
-          src="/hero-canvas.jpg"
-          alt={en ? "Land's End rock formations in Cabo San Lucas" : "El Arco de Cabo San Lucas"}
-          className="w-full h-full object-cover"
+          src="/gallery/033A0454-scaled.jpg"
+          alt={en ? "Anglers with a giant yellowfin tuna aboard the Kailani" : "Pescadores con un atún aleta amarilla gigante a bordo del Kailani"}
+          className="w-full h-full object-cover object-[50%_25%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       </div>
