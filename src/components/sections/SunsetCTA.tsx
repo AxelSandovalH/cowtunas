@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import BookButton from "@/components/booking/BookButton";
 import type { Lang } from "@/lib/i18n";
@@ -11,10 +12,12 @@ export default function SunsetCTA({ lang }: Props) {
     <section className="relative overflow-hidden">
       {/* Full-bleed sunrise photo */}
       <div className="absolute inset-0">
-        <img loading="lazy" decoding="async"
+        <Image
           src="/gallery/033A0454-scaled.jpg"
           alt={en ? "Anglers with a giant yellowfin tuna aboard the Kailani" : "Pescadores con un atún aleta amarilla gigante a bordo del Kailani"}
-          className="w-full h-full object-cover object-[50%_25%]"
+          fill
+          sizes="100vw"
+          className="object-cover object-[50%_25%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       </div>

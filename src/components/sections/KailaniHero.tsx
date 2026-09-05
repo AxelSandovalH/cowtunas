@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import type { Lang } from "@/lib/i18n";
 
@@ -10,10 +11,12 @@ export default function KailaniHero({ lang }: Props) {
     <section className="relative overflow-hidden">
       {/* Full-bleed boat photo */}
       <div className="absolute inset-0">
-        <img loading="lazy" decoding="async"
+        <Image
           src="/gallery/DJI_0182-scaled.jpg"
           alt={en ? "The Kailani off the coast of San Jose del Cabo" : "El Kailani frente a la costa de San José del Cabo"}
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
           style={{ transform: "scale(1.4) translateX(20%)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/30" />

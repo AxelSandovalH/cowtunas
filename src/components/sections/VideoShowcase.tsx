@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import LazyVideo from "@/components/ui/LazyVideo";
 import type { Lang } from "@/lib/i18n";
@@ -11,13 +12,12 @@ export default function VideoShowcase({ lang }: Props) {
     <section className="relative py-24 overflow-hidden">
       {/* Land's End canvas background */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/hero-canvas.jpg"
           alt=""
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-[#0e1621]/60" />
       </div>

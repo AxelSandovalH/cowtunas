@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import type { Lang } from "@/lib/i18n";
 
@@ -14,11 +15,13 @@ export default function DayOnWater({ lang }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <Reveal direction="left">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img loading="lazy" decoding="async"
-                src="/gallery/IMG_9496-1.jpeg"
-                alt={en ? "Trophy yellowfin tuna hung at the dock" : "Atún aleta amarilla de trofeo colgado en el muelle"}
-                className="absolute inset-0 w-full h-full object-cover object-top"
-              />
+              <Image
+          src="/gallery/IMG_9496-1.jpeg"
+          alt={en ? "Trophy yellowfin tuna hung at the dock" : "Atún aleta amarilla de trofeo colgado en el muelle"}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover object-top"
+        />
             </div>
           </Reveal>
           <Reveal direction="right">
@@ -64,11 +67,13 @@ export default function DayOnWater({ lang }: Props) {
           </Reveal>
           <Reveal direction="right">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-              <img loading="lazy" decoding="async"
-                src="/gallery/iphone14-scaled.jpeg"
-                alt={en ? "Happy anglers showing off their mahi-mahi catch" : "Pescadores felices mostrando sus dorados"}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+              <Image
+          src="/gallery/iphone14-scaled.jpeg"
+          alt={en ? "Happy anglers showing off their mahi-mahi catch" : "Pescadores felices mostrando sus dorados"}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover"
+        />
             </div>
           </Reveal>
         </div>

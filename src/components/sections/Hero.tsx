@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
@@ -18,11 +19,13 @@ export default function Hero({ dict, lang }: Props) {
     <section className="relative min-h-screen flex items-end overflow-hidden">
       {/* Sunset photo background */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/gallery/iphone5.jpeg"
-          fetchPriority="high"
           alt={lang === "en" ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/60" />
       </div>

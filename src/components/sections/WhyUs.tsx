@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import type { Translations } from "@/lib/translations/types";
 
@@ -73,11 +74,13 @@ export default function WhyUs({ dict }: Props) {
         <Reveal className="relative mt-16">
           {/* Wide marina shot */}
           <div className="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] shadow-xl">
-            <img loading="lazy" decoding="async"
-              src="/cowtunas-lateral-sunset.jpg"
-              alt="The Kailani at the Cabo San Lucas marina at dusk"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <Image
+          src="/cowtunas-lateral-sunset.jpg"
+          alt="The Kailani at the Cabo San Lucas marina at dusk"
+          fill
+          sizes="(max-width: 640px) 100vw, 1200px"
+          className="object-cover"
+        />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-5 left-6 right-6 sm:right-96">
               <p className="text-white/70 text-xs uppercase tracking-widest mb-1">Our home port</p>
@@ -90,21 +93,25 @@ export default function WhyUs({ dict }: Props) {
           {/* Vertical bow shot pinned like a snapshot (desktop) */}
           <div className="hidden sm:block absolute -bottom-10 right-8 md:right-14 w-52 md:w-64 rotate-3 hover:rotate-0 transition-transform duration-300">
             <div className="rounded-2xl overflow-hidden border-8 border-white shadow-2xl aspect-[3/4]">
-              <img loading="lazy" decoding="async"
-                src="/cowtunas-frente.jpg"
-                alt="The Kailani ready to depart"
-                className="w-full h-full object-cover"
-              />
+              <Image
+          src="/cowtunas-frente.jpg"
+          alt="The Kailani ready to depart"
+          fill
+          sizes="(max-width: 640px) 100vw, 256px"
+          className="object-cover"
+        />
             </div>
           </div>
 
           {/* Stacked on mobile */}
           <div className="sm:hidden mt-6 rounded-2xl overflow-hidden shadow-lg aspect-[3/4]">
-            <img loading="lazy" decoding="async"
-              src="/cowtunas-frente.jpg"
-              alt="The Kailani ready to depart"
-              className="w-full h-full object-cover"
-            />
+            <Image
+          src="/cowtunas-frente.jpg"
+          alt="The Kailani ready to depart"
+          fill
+          sizes="(max-width: 640px) 100vw, 256px"
+          className="object-cover"
+        />
           </div>
         </Reveal>
 
