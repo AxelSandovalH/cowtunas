@@ -16,7 +16,7 @@ export default function DayOnWater({ lang }: Props) {
           <Reveal direction="left">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
               <Image
-          src="/gallery/IMG_9496-1.jpeg"
+          src="/gallery/IMG_9499-1.jpeg"
           alt={en ? "Trophy yellowfin tuna hung at the dock" : "Atún aleta amarilla de trofeo colgado en el muelle"}
           fill
           sizes="(min-width: 1024px) 50vw, 100vw"
