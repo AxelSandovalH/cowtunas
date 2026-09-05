@@ -34,9 +34,7 @@ export default function Navbar({ dict, lang }: Props) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-md py-2"
-          : "bg-white/10 backdrop-blur-md border-b border-white/15 shadow-lg py-3"
+        scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-3"
       }`}
     >
       <div className="w-full px-4 sm:px-6 flex items-center justify-between">
