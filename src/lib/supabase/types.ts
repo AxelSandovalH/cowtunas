@@ -36,7 +36,7 @@ export interface Database {
       bookings: {
         Row: {
           id: string;
-          client_id: string;
+          client_id: string | null;
           trip_date: string;
           anglers: number;
           status: BookingStatus;

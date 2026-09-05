@@ -122,7 +122,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
     } else {
       const { data: newClient } = await supabase
         .from("clients")
-        .insert({ full_name: name, email: email || null, phone: phone || null })
+        .insert({ full_name: name, email: email || null, phone: phone || null, country: null, notes: null })
         .select("id")
         .single();
       clientId = newClient?.id ?? null;
