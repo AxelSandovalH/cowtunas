@@ -35,7 +35,10 @@ export default function Hero({ dict, lang }: Props) {
   // can never repaint on top of the photo (Safari repaints opacity-0 videos).
   const [videoDone, setVideoDone] = useState(false);
   useMotionValueEvent(scrollYProgress, "change", (p) => {
-    setVideoDone(p >= 0.72);
+    // Hysteresis: once the photo takes over it stays while scrolling down;
+    // the video only comes back after scrolling clearly back up.
+    if (p >= 0.72) setVideoDone(true);
+    else if (p <= 0.5) setVideoDone(false);
   });
 
   useEffect(() => {
