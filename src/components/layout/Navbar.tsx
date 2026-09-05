@@ -48,7 +48,7 @@ export default function Navbar({ dict, lang }: Props) {
             className="h-16 w-auto md:h-24"
           />
           <span
-            className={`font-bold text-2xl tracking-tight transition-colors ${
+            className={`font-display font-black uppercase text-3xl md:text-4xl tracking-tight transition-colors ${
               scrolled ? "text-[#334862]" : "text-white"
             }`}
           >
