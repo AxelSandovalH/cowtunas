@@ -12,7 +12,7 @@ export default function Footer({ dict, lang }: Props) {
   const year = new Date().getFullYear();
   const links = [
     { href: `/${lang}#boat`, label: dict.nav.boat },
-    { href: `/${lang}#captain`, label: dict.nav.captain },
+    { href: `/${lang}#species`, label: dict.nav.captain },
     { href: `/${lang}#gallery`, label: dict.nav.gallery },
     { href: `/${lang}#reviews`, label: dict.nav.reviews },
     { href: `/${lang}#faq`, label: dict.nav.faq },

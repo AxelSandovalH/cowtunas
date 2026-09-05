@@ -4,7 +4,7 @@ const en: Translations = {
   nav: {
     home: "Home",
     boat: "The Boat",
-    captain: "Captain",
+    captain: "The Catch",
     gallery: "Gallery",
     reviews: "Reviews",
     faq: "FAQ",
