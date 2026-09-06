@@ -13,10 +13,10 @@ type CalBooking = {
 };
 
 const STATUS_STYLES: Record<string, string> = {
-  pending: "bg-amber-100 text-amber-700 border-amber-200",
-  confirmed: "bg-cyan-100 text-cyan-700 border-cyan-200",
-  completed: "bg-green-100 text-green-700 border-green-200",
-  cancelled: "bg-red-100 text-red-500 border-red-200 line-through",
+  pending: "bg-amber-600 text-white border-amber-700",
+  confirmed: "bg-[#0f89a8] text-white border-[#0c6f88]",
+  completed: "bg-emerald-600 text-white border-emerald-700",
+  cancelled: "bg-red-600/80 text-white border-red-700 line-through",
 };
 
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -109,7 +109,7 @@ export default function BookingsCalendar({ bookings }: { bookings: CalBooking[] 
                     <Link
                       key={b.id}
                       href={`/admin/bookings/${b.id}`}
-                      className={`block text-[11px] leading-tight font-semibold border rounded-md px-1.5 py-1 truncate hover:opacity-80 ${
+                      className={`block text-[11px] leading-tight font-bold border-l-2 rounded-md px-1.5 py-1 truncate shadow-sm hover:opacity-85 ${
                         STATUS_STYLES[b.status] ?? "bg-gray-100 text-gray-600 border-gray-200"
                       }`}
                       title={`${b.anglers} anglers · $${Number(b.total_price).toLocaleString()}${b.notes ? ` · ${b.notes}` : ""}`}

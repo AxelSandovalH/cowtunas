@@ -164,9 +164,9 @@ select.input {
   outline-offset: 2px;
 }
 /* Unified status chips (calendar + tables + dashboard) */
-.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; text-transform: capitalize; }
-.chip::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: currentColor; }
-.chip-pending   { background: #fef3c7; color: #b45309; }
-.chip-confirmed { background: #cff4fc; color: #0f89a8; }
-.chip-completed { background: #dcfce7; color: #15803d; }
-.chip-cancelled { background: #fee2e2; color: #dc2626; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; text-transform: capitalize; color: #fff; }
+.chip::before { content: ""; width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.75); }
+.chip-pending   { background: #d97706; }
+.chip-confirmed { background: #0f89a8; }
+.chip-completed { background: #059669; }
+.chip-cancelled { background: #dc2626; }
