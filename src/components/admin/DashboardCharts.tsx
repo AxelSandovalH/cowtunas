@@ -31,8 +31,17 @@ export function RevenueByMonthChart({
           tickFormatter={(v: number) => `$${v >= 1000 ? `${v / 1000}k` : v}`}
         />
         <Tooltip
-          contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e2e8f0" }}
-          labelStyle={{ fontWeight: 600 }}
+          cursor={{ fill: "rgba(20, 163, 199, 0.08)" }}
+          contentStyle={{
+            fontSize: 12,
+            borderRadius: 10,
+            border: "none",
+            background: "#16283a",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+            color: "#ffffff",
+          }}
+          labelStyle={{ fontWeight: 700, color: "#ffffff" }}
+          itemStyle={{ color: "#9fd8e8" }}
           formatter={(v, name) => [`$${Number(v).toLocaleString()}`, name === "revenue" ? "Revenue" : "Expenses"]}
         />
         <Bar dataKey="revenue" radius={[4, 4, 0, 0]} maxBarSize={28} fill="#14a3c7" />
@@ -75,7 +84,16 @@ export function BookingStatusChart({
           )}
         />
         <Tooltip
-          contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e2e8f0" }}
+          contentStyle={{
+            fontSize: 12,
+            borderRadius: 10,
+            border: "none",
+            background: "#16283a",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+            color: "#ffffff",
+            textTransform: "capitalize",
+          }}
+          itemStyle={{ color: "#9fd8e8" }}
           formatter={(v, name) => [Number(v), String(name)]}
         />
       </PieChart>
