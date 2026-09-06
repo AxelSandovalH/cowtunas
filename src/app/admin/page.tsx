@@ -24,10 +24,10 @@ export default async function AdminDashboard() {
   const netProfit = totalRevenue - totalExpenses;
 
   const stats = [
-    { label: "Total Revenue", value: `$${totalRevenue.toLocaleString()}`, color: "text-green-600", bg: "bg-green-50" },
-    { label: "Net Profit", value: `$${netProfit.toLocaleString()}`, color: "text-[#446084]", bg: "bg-blue-50" },
-    { label: "Upcoming Trips", value: upcoming.length, color: "text-[#14a3c7]", bg: "bg-orange-50" },
-    { label: "Total Clients", value: totalClients, color: "text-purple-600", bg: "bg-purple-50" },
+    { label: "Total Revenue", value: `$${totalRevenue.toLocaleString()}`, accent: "bg-green-600" },
+    { label: "Net Profit", value: `$${netProfit.toLocaleString()}`, accent: "bg-[#1a2b3c]" },
+    { label: "Upcoming Trips", value: upcoming.length, accent: "bg-[#14a3c7]" },
+    { label: "Total Clients", value: totalClients, accent: "bg-amber-500" },
   ];
 
   const recentBookings = bookings
@@ -67,9 +67,10 @@ export default async function AdminDashboard() {
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+          <div key={stat.label} className="relative bg-white rounded-2xl p-6 shadow-sm border border-[#e8e2d5] overflow-hidden">
+            <span className={`absolute inset-x-0 top-0 h-1 ${stat.accent}`} />
             <p className="text-xs text-gray-400 uppercase tracking-widest mb-2">{stat.label}</p>
-            <p className={`text-3xl font-black ${stat.color}`}>{stat.value}</p>
+            <p className="font-display text-4xl font-black text-[#1a2b3c] tabular-nums">{stat.value}</p>
           </div>
         ))}
       </div>
@@ -112,14 +113,7 @@ export default async function AdminDashboard() {
                       {new Date(b.trip_date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                     </td>
                     <td className="px-6 py-3">
-                      <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-semibold capitalize ${
-                        b.status === "completed" ? "bg-green-100 text-green-700" :
-                        b.status === "confirmed" ? "bg-blue-100 text-blue-700" :
-                        b.status === "pending" ? "bg-yellow-100 text-yellow-700" :
-                        "bg-red-100 text-red-700"
-                      }`}>
-                        {b.status}
-                      </span>
+                      <span className={`chip chip-${b.status}`}>{b.status}</span>
                     </td>
                     <td className="px-6 py-3 text-right font-medium">${Number(b.total_price).toLocaleString()}</td>
                     <td className="px-6 py-3 text-right text-green-600 font-semibold">

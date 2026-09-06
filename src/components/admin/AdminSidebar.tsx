@@ -57,6 +57,29 @@ type Props = {
   profile: { full_name: string | null; role: string } | null;
 };
 
+function renderItem(item: (typeof navItems)[number], pathname: string) {
+  const isActive =
+    pathname === item.href || (item.href !== "/admin" && pathname.startsWith(item.href));
+  return (
+    <Link
+      key={item.href}
+      href={item.href}
+      aria-current={isActive ? "page" : undefined}
+      className={`relative flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+        isActive
+          ? "bg-white/10 text-white"
+          : "text-white/55 hover:text-white hover:bg-white/5"
+      }`}
+    >
+      {isActive && (
+        <span className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 rounded-r-full bg-[#14a3c7]" />
+      )}
+      {item.icon}
+      {item.label}
+    </Link>
+  );
+}
+
 export default function AdminSidebar({ profile }: Props) {
   const pathname = usePathname();
   const router = useRouter();
@@ -69,42 +92,44 @@ export default function AdminSidebar({ profile }: Props) {
   };
 
   return (
-    <aside className="w-64 shrink-0 bg-[#1a2b3c] min-h-screen flex flex-col">
+    <aside className="relative w-64 shrink-0 bg-[#0e1621] min-h-screen flex flex-col overflow-hidden">
+      {/* Yellowfin-scale wallpaper */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-[0.14] pointer-events-none"
+        style={{ backgroundImage: "url(/texturatuna.jpg)", backgroundSize: "cover", backgroundPosition: "center 30%" }}
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0e1621]/60 to-[#0e1621] pointer-events-none" />
+
       {/* Logo */}
-      <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10">
-        <Image src="/ct-logo.png" alt="CowTunas" width={36} height={36} className="rounded-full" />
+      <div className="relative flex items-center gap-3 px-5 py-5 border-b border-white/10">
+        <Image src="/ct-logo.png" alt="CowTunas" width={44} height={33} className="h-9 w-auto" />
         <div>
-          <p className="text-white font-bold text-sm">CowTunas</p>
-          <p className="text-white/40 text-xs">Admin Panel</p>
+          <p className="text-white font-display font-black uppercase tracking-wide text-lg leading-none">CowTunas</p>
+          <p className="text-[#14a3c7] text-[10px] font-bold uppercase tracking-[0.2em] mt-1">The Bridge</p>
         </div>
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 px-3 py-4 space-y-1">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href ||
-            (item.href !== "/admin" && pathname.startsWith(item.href));
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                isActive
-                  ? "bg-[#446084] text-white"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              {item.icon}
-              {item.label}
-            </Link>
-          );
-        })}
+      <nav className="relative flex-1 px-3 py-4">
+        <p className="px-4 pb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Operations</p>
+        <div className="space-y-1 mb-5">
+          {navItems.slice(0, 3).map((item) => renderItem(item, pathname))}
+        </div>
+        <p className="px-4 pb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">The Kailani</p>
+        <div className="space-y-1 mb-5">
+          {navItems.slice(3, 4).map((item) => renderItem(item, pathname))}
+        </div>
+        <p className="px-4 pb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Marketing</p>
+        <div className="space-y-1">
+          {navItems.slice(4).map((item) => renderItem(item, pathname))}
+        </div>
       </nav>
 
       {/* User */}
-      <div className="px-4 py-4 border-t border-white/10">
+      <div className="relative px-4 py-4 border-t border-white/10">
         <div className="flex items-center gap-3 px-3 py-2 mb-2">
-          <div className="w-8 h-8 rounded-full bg-[#446084] flex items-center justify-center text-white text-xs font-bold">
+          <div className="w-8 h-8 rounded-full bg-[#14a3c7] flex items-center justify-center text-white text-xs font-black">
             {profile?.full_name?.[0]?.toUpperCase() ?? "U"}
           </div>
           <div className="flex-1 min-w-0">

@@ -2,13 +2,6 @@ import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import BookingsCalendar from "@/components/admin/BookingsCalendar";
 
-const statusColor: Record<string, string> = {
-  pending:   "bg-yellow-100 text-yellow-700",
-  confirmed: "bg-blue-100 text-blue-700",
-  completed: "bg-green-100 text-green-700",
-  cancelled: "bg-red-100 text-red-700",
-};
-
 export default async function BookingsPage() {
   const supabase = await createClient();
   const { data: bookings } = await supabase
@@ -65,9 +58,7 @@ export default async function BookingsPage() {
                   </td>
                   <td className="px-5 py-4 text-gray-600">{b.anglers}</td>
                   <td className="px-5 py-4">
-                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-semibold capitalize ${statusColor[b.status]}`}>
-                      {b.status}
-                    </span>
+                    <span className={`chip chip-${b.status}`}>{b.status}</span>
                   </td>
                   <td className="px-5 py-4 font-semibold">${Number(b.total_price).toLocaleString()}</td>
                   <td className="px-5 py-4 text-red-500">{b.expenses > 0 ? `-$${Number(b.expenses).toLocaleString()}` : "—"}</td>
