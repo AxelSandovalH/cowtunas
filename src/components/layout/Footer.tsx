@@ -105,6 +105,15 @@ export default function Footer({ dict, lang }: Props) {
         <Link href={lang === "en" ? "/es" : "/en"} className="hover:text-white">
           {lang === "en" ? "Español" : "English"}
         </Link>
+        <span className="mx-2">·</span>
+        <a
+          href="https://axelsandoval.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-500 hover:text-[#14a3c7] transition-colors"
+        >
+          {lang === "en" ? "Site by" : "Sitio por"} axelsandoval.dev
+        </a>
       </div>
     </footer>
   );
