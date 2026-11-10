@@ -50,13 +50,26 @@ export default async function TunaPage({ params }: Props) {
       {/* Hero: flesh texture + loin */}
       <section className="relative overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
+          {/* Mobile: flesh texture still */}
           <Image
             src="/texturacarnetuna.jpg"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-30"
+            className="object-cover opacity-30 sm:hidden"
           />
+          {/* Desktop: Bisbee's fleet video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/posters/hero-bisbees.jpg"
+            className="absolute inset-0 w-full h-full object-cover hidden sm:block opacity-60"
+          >
+            <source src="/hero-bisbees.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#0e1621]/70 via-[#0e1621]/40 to-[#0e1621]" />
         </div>
 
