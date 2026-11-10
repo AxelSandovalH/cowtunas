@@ -170,3 +170,5 @@ select.input {
 .chip-confirmed { background: #0f89a8; }
 .chip-completed { background: #059669; }
 .chip-cancelled { background: #dc2626; }
+.chip-paid      { background: #0f89a8; }
+.chip-delivered { background: #059669; }

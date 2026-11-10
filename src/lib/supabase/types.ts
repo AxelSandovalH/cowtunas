@@ -33,6 +33,23 @@ export interface Database {
         Update: Partial<Database["public"]["Tables"]["clients"]["Insert"]>;
         Relationships: [];
       };
+      orders: {
+        Row: {
+          id: string;
+          customer_name: string;
+          phone: string | null;
+          email: string | null;
+          address: string | null;
+          kg: number;
+          total_mxn: number;
+          status: string;
+          notes: string | null;
+          created_at: string;
+        };
+        Insert: Omit<Database["public"]["Tables"]["orders"]["Row"], "created_at">;
+        Update: Partial<Database["public"]["Tables"]["orders"]["Insert"]>;
+        Relationships: [];
+      };
       bookings: {
         Row: {
           id: string;
