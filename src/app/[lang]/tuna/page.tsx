@@ -70,8 +70,8 @@ export default async function TunaPage({ params }: Props) {
             </h1>
             <p className="text-white/70 text-lg max-w-md mb-8">
               {en
-                ? "The same cow-class yellowfin our anglers fight — cleaned, portioned and vacuum-packed the day it's caught."
-                : "El mismo aleta amarilla clase 'cow' que pelean nuestros pescadores — limpio, porcionado y empacado al vacío el día de su captura."}
+                ? "The same cow-class yellowfin our anglers fight — cleaned, portioned and vacuum-packed the day it's caught. Delivered to your door in Los Cabos."
+                : "El mismo aleta amarilla clase 'cow' que pelean nuestros pescadores — limpio, porcionado y empacado al vacío el día de su captura. Te lo llevamos a tu puerta en Los Cabos."}
             </p>
             <div className="grid grid-cols-3 gap-3 max-w-md">
               {["/gallery/cw/cw-42.jpg", "/gallery/cw/cw-56.jpg", "/gallery/cw/cw-45.jpg"].map((src) => (

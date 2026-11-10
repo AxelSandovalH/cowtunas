@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TUNA_PRICE_PER_KG_USD, TUNA_MIN_KG, TUNA_MAX_KG } from "@/lib/tuna";
+import { TUNA_PRICE_PER_KG_MXN, TUNA_MIN_KG, TUNA_MAX_KG } from "@/lib/tuna";
 import type { Lang } from "@/lib/i18n";
 
 export default function TunaOrder({ lang }: { lang: Lang }) {
@@ -10,13 +10,13 @@ export default function TunaOrder({ lang }: { lang: Lang }) {
   const [paying, setPaying] = useState(false);
   const [payError, setPayError] = useState("");
 
-  const total = kg * TUNA_PRICE_PER_KG_USD;
+  const total = kg * TUNA_PRICE_PER_KG_MXN;
   const clamp = (v: number) => Math.min(TUNA_MAX_KG, Math.max(TUNA_MIN_KG, v));
 
   const whatsappHref = `https://wa.me/523141222146?text=${encodeURIComponent(
     en
-      ? `Hi! I'd like to order ${kg} kg of vacuum-packed yellowfin tuna ($${total} USD).`
-      : `Hola! Quiero pedir ${kg} kg de atún aleta amarilla empacado al vacío ($${total} USD).`
+      ? `Hi! I'd like to order ${kg} kg of vacuum-packed yellowfin tuna ($${total.toLocaleString()} MXN) with home delivery.`
+      : `Hola! Quiero pedir ${kg} kg de atún aleta amarilla empacado al vacío ($${total.toLocaleString()} MXN) con envío a domicilio.`
   )}`;
 
   const payOnline = async () => {
@@ -46,8 +46,8 @@ export default function TunaOrder({ lang }: { lang: Lang }) {
         {en ? "Yellowfin · Vacuum-Packed" : "Aleta Amarilla · Empacado al Vacío"}
       </p>
       <div className="flex items-baseline gap-2 mb-6">
-        <span className="font-display text-5xl font-black text-[#1a2b3c]">${TUNA_PRICE_PER_KG_USD}</span>
-        <span className="text-gray-400 font-semibold">USD / kg</span>
+        <span className="font-display text-5xl font-black text-[#1a2b3c]">${TUNA_PRICE_PER_KG_MXN}</span>
+        <span className="text-gray-400 font-semibold">MXN / kg</span>
       </div>
 
       {/* Kg selector */}
@@ -88,7 +88,7 @@ export default function TunaOrder({ lang }: { lang: Lang }) {
       <div className="flex justify-between items-center bg-[#f7f3ed] rounded-xl px-5 py-4 mb-6">
         <span className="text-gray-500 font-semibold">{en ? "Total" : "Total"}</span>
         <span className="font-display text-3xl font-black text-[#1a2b3c] tabular-nums">
-          ${total.toLocaleString()} <span className="text-sm text-gray-400 font-bold">USD</span>
+          ${total.toLocaleString()} <span className="text-sm text-gray-400 font-bold">MXN</span>
         </span>
       </div>
 
@@ -111,8 +111,8 @@ export default function TunaOrder({ lang }: { lang: Lang }) {
 
       <p className="text-gray-400 text-xs mt-5 leading-relaxed">
         {en
-          ? "Pickup at the Cabo San Lucas Marina. Availability depends on the day's catch — we'll confirm by WhatsApp."
-          : "Recolección en la Marina de Cabo San Lucas. La disponibilidad depende de la pesca del día — confirmamos por WhatsApp."}
+          ? "Free home delivery in Los Cabos. Availability depends on the day's catch — we'll confirm by WhatsApp."
+          : "Envío a domicilio incluido en Los Cabos. La disponibilidad depende de la pesca del día — confirmamos por WhatsApp."}
       </p>
     </div>
   );

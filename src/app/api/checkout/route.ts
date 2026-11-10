@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { TUNA_PRICE_PER_KG_USD } from "@/lib/tuna";
+import { TUNA_PRICE_PER_KG_MXN } from "@/lib/tuna";
 
 // 30% deposit on published boat rates (USD cents)
 const TRIPS = {
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       line_items: [
         {
           price_data: {
-            currency: "usd",
+            currency: "mxn",
             product_data: {
               name:
                 lang === "es"
@@ -42,10 +42,10 @@ export async function POST(request: Request) {
                   : "Vacuum-Packed Yellowfin Tuna",
               description:
                 lang === "es"
-                  ? "Precio por kilo. Recolección en la Marina de Cabo San Lucas."
-                  : "Price per kilo. Pickup at the Cabo San Lucas Marina.",
+                  ? "Precio por kilo. Envío a domicilio incluido en Los Cabos."
+                  : "Price per kilo. Free home delivery in Los Cabos.",
             },
-            unit_amount: TUNA_PRICE_PER_KG_USD * 100,
+            unit_amount: TUNA_PRICE_PER_KG_MXN * 100,
           },
           quantity: kg,
         },
