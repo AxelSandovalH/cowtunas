@@ -100,7 +100,7 @@ export default function Footer({ dict, lang }: Props) {
         </div>
       </div>
 
-      <div className="relative border-t border-white/10 py-5 text-center text-sm text-gray-400">
+      <div className="relative border-t border-white/10 py-5 pb-24 sm:pb-5 text-center text-sm text-gray-400 px-4">
         © {year} CowTunas Fishing Charters. {dict.footer.rights}
         <span className="mx-2">·</span>
         <Link href={lang === "en" ? "/es" : "/en"} className="hover:text-white">

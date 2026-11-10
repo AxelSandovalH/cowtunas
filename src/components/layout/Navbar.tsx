@@ -46,10 +46,10 @@ export default function Navbar({ dict, lang }: Props) {
             alt="CowTunas"
             width={152}
             height={112}
-            className="h-20 w-auto md:h-28"
+            className="h-11 w-auto sm:h-20 md:h-28"
           />
           <span
-            className={`font-display font-black uppercase text-3xl md:text-4xl tracking-tight transition-colors ${
+            className={`font-display font-black uppercase text-xl sm:text-3xl md:text-4xl tracking-tight transition-colors ${
               scrolled ? "text-[#334862]" : "text-white"
             }`}
           >
