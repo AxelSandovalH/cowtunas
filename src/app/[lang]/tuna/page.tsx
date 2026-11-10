@@ -10,15 +10,26 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params;
+  const title =
+    lang === "es"
+      ? "Atún Fresco por Kilo — CowTunas"
+      : "Fresh Tuna by the Kilo — CowTunas";
+  const description =
+    lang === "es"
+      ? "Atún aleta amarilla empacado al vacío, directo de nuestras salidas en Cabo San Lucas. Envío a domicilio en Los Cabos."
+      : "Vacuum-packed yellowfin tuna, straight off our Cabo San Lucas charters. Home delivery in Los Cabos.";
   return {
-    title:
-      lang === "es"
-        ? "Atún Fresco por Kilo — CowTunas"
-        : "Fresh Tuna by the Kilo — CowTunas",
-    description:
-      lang === "es"
-        ? "Atún aleta amarilla empacado al vacío, directo de nuestras salidas en Cabo San Lucas."
-        : "Vacuum-packed yellowfin tuna, straight off our Cabo San Lucas charters.",
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [{ url: "/og-tuna.jpg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      images: ["/og-tuna.jpg"],
+    },
   };
 }
 
