@@ -86,12 +86,24 @@ export default async function TunaPage({ params }: Props) {
                 ? "The same cow-class yellowfin our anglers fight — cleaned, portioned and vacuum-packed the day it's caught. Delivered to your door in Los Cabos."
                 : "El mismo aleta amarilla clase 'cow' que pelean nuestros pescadores — limpio, porcionado y empacado al vacío el día de su captura. Te lo llevamos a tu puerta en Los Cabos."}
             </p>
-            <div className="grid grid-cols-3 gap-3 max-w-md">
-              {["/gallery/cw/cw-42.jpg", "/gallery/cw/cw-56.jpg", "/gallery/cw/cw-45.jpg"].map((src) => (
-                <div key={src} className="relative aspect-square rounded-xl overflow-hidden">
-                  <Image src={src} alt="" fill sizes="160px" className="object-cover" />
-                </div>
-              ))}
+            <div className="max-w-md">
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl mb-3">
+                <Image
+                  src="/tuna-vacuum.jpg"
+                  alt={en ? "Vacuum-packed yellowfin tuna steaks on ice" : "Medallones de atún aleta amarilla empacados al vacío sobre hielo"}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 448px"
+                  priority
+                  className="object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {["/gallery/cw/cw-42.jpg", "/gallery/cw/cw-56.jpg", "/gallery/cw/cw-45.jpg"].map((src) => (
+                  <div key={src} className="relative aspect-square rounded-xl overflow-hidden">
+                    <Image src={src} alt="" fill sizes="160px" className="object-cover" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
