@@ -10,6 +10,7 @@ const en: Translations = {
     faq: "FAQ",
     contact: "Contact",
     book: "Book Now",
+    tuna: "Fresh Tuna",
   },
   hero: {
     tagline: "World-Class Sportfishing in Los Cabos",

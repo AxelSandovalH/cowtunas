@@ -8,6 +8,7 @@ export interface Translations {
     faq: string;
     contact: string;
     book: string;
+    tuna: string;
   };
   hero: {
     tagline: string;

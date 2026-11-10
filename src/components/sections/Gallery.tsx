@@ -74,7 +74,6 @@ const photos = [
   { src: "/gallery/cw/cw-56.jpg", alt: "CowTunas trip photo", span: "" },
   { src: "/gallery/cw/cw-57.jpg", alt: "CowTunas trip photo", span: "" },
   { src: "/gallery/cw/cw-58.jpg", alt: "CowTunas trip photo", span: "" },
-  { src: "/gallery/cw/cw-59.jpg", alt: "CowTunas trip photo", span: "" },
   { src: "/gallery/cw/cw-60.jpg", alt: "CowTunas trip photo", span: "" },
 ];
 

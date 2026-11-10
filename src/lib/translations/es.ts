@@ -10,6 +10,7 @@ const es: Translations = {
     faq: "Preguntas",
     contact: "Contacto",
     book: "Reservar",
+    tuna: "Atún Fresco",
   },
   hero: {
     tagline: "Pesca deportiva de clase mundial en Los Cabos",

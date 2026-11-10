@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { TUNA_PRICE_PER_KG_USD } from "@/lib/tuna";
 
 // 30% deposit on published boat rates (USD cents)
 const TRIPS = {
@@ -18,12 +19,48 @@ export async function POST(request: Request) {
 
   const stripe = new Stripe(key);
   const body = await request.json();
+  const lang = body.lang === "es" ? "es" : "en";
+  const origin0 = request.headers.get("origin") ?? "https://www.cowtunas.com";
+
+  // Vacuum-packed tuna by the kilo (full payment, no deposit)
+  if (body.product === "tuna") {
+    const kg = Number(body.kg);
+    if (!Number.isInteger(kg) || kg < 1 || kg > 50) {
+      return NextResponse.json({ error: "Invalid quantity." }, { status: 400 });
+    }
+    const session = await stripe.checkout.sessions.create({
+      mode: "payment",
+      customer_email: typeof body.email === "string" && body.email ? body.email : undefined,
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name:
+                lang === "es"
+                  ? "Atún Aleta Amarilla Empacado al Vacío"
+                  : "Vacuum-Packed Yellowfin Tuna",
+              description:
+                lang === "es"
+                  ? "Precio por kilo. Recolección en la Marina de Cabo San Lucas."
+                  : "Price per kilo. Pickup at the Cabo San Lucas Marina.",
+            },
+            unit_amount: TUNA_PRICE_PER_KG_USD * 100,
+          },
+          quantity: kg,
+        },
+      ],
+      metadata: { product: "tuna", kg: String(kg) },
+      success_url: `${origin0}/${lang}/tuna?order=paid`,
+      cancel_url: `${origin0}/${lang}/tuna?order=cancelled`,
+    });
+    return NextResponse.json({ url: session.url });
+  }
+
   const trip = TRIPS[body.trip as keyof typeof TRIPS];
   if (!trip) {
     return NextResponse.json({ error: "Unknown trip type." }, { status: 400 });
   }
-
-  const lang = body.lang === "es" ? "es" : "en";
   const deposit = Math.round(trip.price * 0.3);
   const origin = request.headers.get("origin") ?? "https://cowtunas.vercel.app";
 
