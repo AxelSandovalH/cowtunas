@@ -50,6 +50,8 @@ export async function POST(request: Request) {
           quantity: kg,
         },
       ],
+      shipping_address_collection: { allowed_countries: ["MX"] },
+      phone_number_collection: { enabled: true },
       metadata: { product: "tuna", kg: String(kg) },
       success_url: `${origin0}/${lang}/tuna?order=paid`,
       cancel_url: `${origin0}/${lang}/tuna?order=cancelled`,
