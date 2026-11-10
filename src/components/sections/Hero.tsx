@@ -20,19 +20,16 @@ export default function Hero({ dict, lang }: Props) {
           quality={90}
           className="object-cover object-[42%_center] sm:hidden"
         />
-        {/* Desktop: Bisbee's fleet video past the Arch */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/posters/hero-bisbees.jpg"
-          aria-label={lang === "en" ? "Boats racing past the Cabo San Lucas Arch at dawn" : "Lanchas pasando El Arco de Cabo San Lucas al amanecer"}
-          className="absolute inset-0 w-full h-full object-cover hidden sm:block"
-        >
-          <source src="/hero-bisbees.mp4" type="video/mp4" />
-        </video>
+        {/* Desktop: sunset hero */}
+        <Image
+          src="/gallery/iphone5.jpeg"
+          alt={lang === "en" ? "The Kailani fishing at sunrise in the Sea of Cortez" : "El Kailani pescando al amanecer en el Mar de Cortés"}
+          fill
+          sizes="100vw"
+          priority
+          quality={90}
+          className="object-cover hidden sm:block"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/60" />
       </div>
 
