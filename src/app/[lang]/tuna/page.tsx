@@ -48,7 +48,7 @@ export default async function TunaPage({ params }: Props) {
   return (
     <div className="bg-[#0e1621]">
       {/* Hero: flesh texture + loin */}
-      <section className="relative overflow-hidden pt-32 pb-20">
+      <section className="relative overflow-hidden pt-24 sm:pt-32 pb-20">
         <div className="absolute inset-0">
           {/* Mobile: flesh texture still */}
           <Image
@@ -74,7 +74,7 @@ export default async function TunaPage({ params }: Props) {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-white">
+          <div className="text-white order-2 lg:order-1">
             <p className="text-[#14a3c7] font-bold text-sm uppercase tracking-[0.3em] mb-4">
               {en ? "From our deck to your table" : "De nuestra cubierta a tu mesa"}
             </p>
@@ -107,7 +107,7 @@ export default async function TunaPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="max-w-md w-full lg:ml-auto">
+          <div className="max-w-md w-full mx-auto lg:mx-0 lg:ml-auto order-1 lg:order-2">
             <TunaOrder lang={lang as Lang} />
           </div>
         </div>
