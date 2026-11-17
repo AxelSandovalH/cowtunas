@@ -5,6 +5,20 @@ import Footer from "@/components/layout/Footer";
 import BookingProvider from "@/components/booking/BookingProvider";
 import MobileBookBar from "@/components/ui/MobileBookBar";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  return {
+    alternates: {
+      canonical: `/${lang}`,
+      languages: { en: "/en", es: "/es", "x-default": "/en" },
+    },
+  };
+}
+
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }];
 }

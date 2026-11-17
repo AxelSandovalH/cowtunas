@@ -18,7 +18,12 @@ export async function generateMetadata({ params }: Props) {
     lang === "es"
       ? "Atún aleta amarilla empacado al vacío, directo de nuestras salidas en Cabo San Lucas. Envío a domicilio en Los Cabos."
       : "Vacuum-packed yellowfin tuna, straight off our Cabo San Lucas charters. Home delivery in Los Cabos.";
+  const alternates = {
+    canonical: `/${lang}/tuna`,
+    languages: { en: "/en/tuna", es: "/es/tuna", "x-default": "/en/tuna" },
+  };
   return {
+    alternates,
     title,
     description,
     openGraph: {

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { createClient } from "@/lib/supabase/client";
+import { BUSINESS } from "@/lib/business";
 import type { Lang } from "@/lib/i18n";
 
 type Props = { lang: Lang; open: boolean; onClose: () => void };
@@ -140,7 +141,7 @@ export default function BookingModal({ lang, open, onClose }: Props) {
           trip_date:    date.toISOString().split("T")[0],
           anglers,
           status:       "pending",
-          total_price:  trip === "half" ? 700 : 1200,
+          total_price:  trip === "half" ? BUSINESS.trips.half.priceUsd : BUSINESS.trips.full.priceUsd,
           deposit_paid: 0,
           expenses:     0,
           notes:        [contact, notes].filter(Boolean).join(" — "),
@@ -268,8 +269,8 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                         }}
                         className="w-full btn-cow text-white font-black py-3.5 rounded-xl transition-colors uppercase tracking-wide disabled:opacity-50">
                         {payLoading ? "…" : en
-                          ? `Secure your date — pay 30% deposit ($${trip === "half" ? 210 : 360})`
-                          : `Asegura tu fecha — deposita 30% ($${trip === "half" ? 210 : 360})`}
+                          ? `Secure your date — pay ${Math.round(BUSINESS.booking.depositRate*100)}% deposit ($${Math.round((trip === "half" ? BUSINESS.trips.half.priceUsd : BUSINESS.trips.full.priceUsd) * BUSINESS.booking.depositRate)} USD)`
+                          : `Asegura tu fecha — deposita ${Math.round(BUSINESS.booking.depositRate*100)}% ($${Math.round((trip === "half" ? BUSINESS.trips.half.priceUsd : BUSINESS.trips.full.priceUsd) * BUSINESS.booking.depositRate)} USD)`}
                       </button>
                       {payError && <p className="text-red-500 text-xs mt-2">{payError}</p>}
                       <button onClick={onClose}
@@ -304,15 +305,15 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                         <p className="label">{en ? "Trip Type" : "Tipo de Viaje"}</p>
                         <div className="grid grid-cols-2 gap-3 mt-2">
                           {([
-                            { id: "half" as const, label: en ? "Half Day" : "Medio Día", hours: "4 hrs", price: 700 },
-                            { id: "full" as const, label: en ? "Full Day" : "Día Completo", hours: "8 hrs", price: 1200 },
+                            { id: "half" as const, label: en ? "Half Day" : "Medio Día", hours: `${BUSINESS.trips.half.hours} hrs`, price: BUSINESS.trips.half.priceUsd },
+                            { id: "full" as const, label: en ? "Full Day" : "Día Completo", hours: `${BUSINESS.trips.full.hours} hrs`, price: BUSINESS.trips.full.priceUsd },
                           ]).map(o => (
                             <button key={o.id} onClick={() => setTrip(o.id)}
                               className={`py-3 px-4 rounded-xl border-2 text-left transition-all ${
                                 trip === o.id ? "border-[#14a3c7] bg-[#14a3c7]/5" : "border-gray-200 hover:border-gray-300"
                               }`}>
                               <span className={`block font-bold ${trip === o.id ? "text-[#14a3c7]" : "text-gray-500"}`}>{o.label}</span>
-                              <span className="block text-xs text-gray-400">{o.hours} · ${o.price} USD</span>
+                              <span className="block text-xs text-gray-400">{o.hours} · ${o.price.toLocaleString()} USD</span>
                             </button>
                           ))}
                         </div>
@@ -383,9 +384,13 @@ export default function BookingModal({ lang, open, onClose }: Props) {
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-500">{en ? "Trip" : "Viaje"}</span>
-                          <span className="font-semibold">{trip === "half" ? (en ? "Half Day — $700" : "Medio Día — $700") : (en ? "Full Day — $1,200" : "Día Completo — $1,200")}</span>
+                          <span className="font-semibold">{trip === "half" ? `${en ? "Half Day" : "Medio Día"} — $${BUSINESS.trips.half.priceUsd} USD` : `${en ? "Full Day" : "Día Completo"} — $${BUSINESS.trips.full.priceUsd.toLocaleString()} USD`}</span>
                         </div>
                       </div>
+
+                      <p className="text-[11px] text-gray-400 leading-relaxed">
+                        {en ? BUSINESS.booking.cancellationPolicy.en : BUSINESS.booking.cancellationPolicy.es}
+                      </p>
 
                       <div className="flex gap-3">
                         <button onClick={() => setStep(2)}

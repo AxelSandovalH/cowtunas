@@ -9,7 +9,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
   const { lang } = await params;
+  const alternates = {
+    canonical: `/${lang}/gallery`,
+    languages: { en: "/en/gallery", es: "/es/gallery", "x-default": "/en/gallery" },
+  };
   return {
+    alternates,
     title:
       lang === "es"
         ? "Galería — CowTunas Fishing Charters"
