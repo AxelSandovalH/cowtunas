@@ -116,7 +116,7 @@ export default function Contact({ dict, lang }: Props) {
                   : "Elige tu fecha, dinos cuántos pescadores y listo. Confirmamos por WhatsApp o correo."}
               </p>
               <BookButton
-                label={lang === "en" ? "Start Booking" : "Comenzar Reserva"}
+                label={lang === "en" ? "Book Your Charter" : "Reserva tu charter"}
                 className="btn-cow text-white font-black px-10 py-4 rounded-xl text-sm uppercase tracking-wider shadow-xl"
               />
               <p className="text-gray-400 text-xs mt-6">

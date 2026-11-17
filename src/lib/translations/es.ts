@@ -9,7 +9,7 @@ const es: Translations = {
     reviews: "Reseñas",
     faq: "Preguntas",
     contact: "Contacto",
-    book: "Reservar",
+    book: "Reserva tu charter",
     tuna: "Atún Fresco",
   },
   hero: {
@@ -17,7 +17,7 @@ const es: Translations = {
     headline: "Persigue al Atún Más Grande",
     subheadline:
       "Zarpa desde la Marina de Cabo San Lucas a bordo del Kailani de 28 pies, al mando del capitán, campeón de torneos con 35 años en estas aguas.",
-    cta_primary: "Reserva tu Charter",
+    cta_primary: "Reserva tu charter",
     cta_secondary: "Ver nuestras capturas",
     badge: "Salida desde la Marina de Cabo San Lucas",
   },
@@ -75,7 +75,7 @@ const es: Translations = {
       {
         name: "Huésped del Charter de Bobby",
         stars: 5,
-        text: "Recientemente tuve el placer de ir a un charter con Cowtunas en San José del Cabo — fue una experiencia increíble, ¡y el precio fue más bajo que cualquier otro charter en Cabo que hemos contratado! Bobby fue un anfitrión excepcional y el capitán nos puso en el lugar correcto en el momento exacto.",
+        text: "Recientemente tuve el placer de ir a un charter con CowTunas en San José del Cabo — fue una experiencia increíble, ¡y el precio fue más bajo que cualquier otro charter en Cabo que hemos contratado! Bobby fue un anfitrión excepcional y el capitán nos puso en el lugar correcto en el momento exacto.",
       },
       {
         name: "Pescador de Cabo",
@@ -85,7 +85,7 @@ const es: Translations = {
       {
         name: "Viaje Padre e Hijo",
         stars: 5,
-        text: "Fui con mi hijo y fue una experiencia que atesoraremos para siempre. La alegría en su cara al sacar su primera captura quedará grabada en mi memoria. Creamos recuerdos de por vida — todo gracias a Cowtunas.",
+        text: "Fui con mi hijo y fue una experiencia que atesoraremos para siempre. La alegría en su cara al sacar su primera captura quedará grabada en mi memoria. Creamos recuerdos de por vida — todo gracias a CowTunas.",
       },
     ],
   },

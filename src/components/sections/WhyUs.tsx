@@ -108,7 +108,7 @@ export default function WhyUs({ dict }: Props) {
             </p>
           </div>
           <BookButton
-            label="Book Your Charter →"
+            label="Book Your Charter"
             className="shrink-0 btn-cow text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
           />
         </div>

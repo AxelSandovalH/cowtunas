@@ -29,8 +29,8 @@ const plans = [
       "Todo el equipo de pesca",
       "Servicio de limpieza de pescado",
     ],
-    cta: "Book Half Day",
-    ctaEs: "Reservar Medio Día",
+    cta: "Book Your Charter",
+    ctaEs: "Reserva tu charter",
     highlight: false,
   },
   {
@@ -57,8 +57,8 @@ const plans = [
       "Limpieza + empaque al vacío",
       "Hielera para bebidas",
     ],
-    cta: "Book Full Day",
-    ctaEs: "Reservar Día Completo",
+    cta: "Book Your Charter",
+    ctaEs: "Reserva tu charter",
     highlight: true,
   },
   {

@@ -13,7 +13,7 @@ export default function KailaniHero({ lang }: Props) {
       <div className="absolute inset-0">
         <Image
           src="/gallery/DJI_0182-scaled.jpg"
-          alt={en ? "The Kailani off the coast of San Jose del Cabo" : "El Kailani frente a la costa de San José del Cabo"}
+          alt={en ? "The Kailani running off Cabo San Lucas" : "El Kailani navegando frente a Cabo San Lucas"}
           fill
           sizes="100vw"
           className="object-cover"
@@ -29,8 +29,8 @@ export default function KailaniHero({ lang }: Props) {
             style={{ textShadow: "0 4px 30px rgba(0,0,0,0.55)" }}
           >
             {en
-              ? "The Kailani — Your Cow Tuna Machine"
-              : "El Kailani — Tu Máquina de Atunes Vaca"}
+              ? "The Kailani — Built for Cow-Class Tuna"
+              : "El Kailani — Hecho para Atunes Clase Cow"}
           </h2>
 
           {/* Navy info box */}

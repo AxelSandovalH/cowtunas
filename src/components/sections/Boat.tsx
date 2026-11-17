@@ -72,7 +72,7 @@ export default function Boat({ dict }: Props) {
 
             <div className="mt-8">
               <BookButton
-                label="Reserve the Kailani →"
+                label="Book Your Charter"
                 className="btn-cow text-white font-bold px-8 py-4 rounded-xl transition-colors shadow-lg"
               />
             </div>

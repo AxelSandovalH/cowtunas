@@ -9,7 +9,7 @@ const en: Translations = {
     reviews: "Reviews",
     faq: "FAQ",
     contact: "Contact",
-    book: "Book Now",
+    book: "Book Your Charter",
     tuna: "Fresh Tuna",
   },
   hero: {
@@ -75,7 +75,7 @@ const en: Translations = {
       {
         name: "Bobby's Charter Guest",
         stars: 5,
-        text: "I recently had the pleasure of going on a fishing charter with Cowtunas in San Jose del Cabo — it was an incredible experience, and the cost was lower than any other charter in Cabo we have booked! Bobby was an exceptional host and our captain consistently put us in the right place at the right time.",
+        text: "I recently had the pleasure of going on a fishing charter with CowTunas in San Jose del Cabo — it was an incredible experience, and the cost was lower than any other charter in Cabo we have booked! Bobby was an exceptional host and our captain consistently put us in the right place at the right time.",
       },
       {
         name: "Cabo Angler",
@@ -85,7 +85,7 @@ const en: Translations = {
       {
         name: "Father & Son Trip",
         stars: 5,
-        text: "I went on this charter with my son and it was a bonding experience we will cherish forever. The joy on his face as he reeled in his first catch will be etched in my memory. We created lifelong memories — all thanks to Cowtunas.",
+        text: "I went on this charter with my son and it was a bonding experience we will cherish forever. The joy on his face as he reeled in his first catch will be etched in my memory. We created lifelong memories — all thanks to CowTunas.",
       },
     ],
   },

@@ -40,7 +40,7 @@ export default function BookCharter({ lang }: Props) {
               )}
             </p>
             <BookButton
-              label={en ? "Book Charter" : "Reservar Charter"}
+              label={en ? "Book Your Charter" : "Reserva tu charter"}
               className="btn-tuna font-black px-10 py-4 rounded-full text-sm uppercase tracking-wider transition-all duration-200 shadow-2xl hover:-translate-y-1"
             />
           </Reveal>
