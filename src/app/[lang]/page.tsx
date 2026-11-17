@@ -3,7 +3,6 @@ import { isValidLang, getDictionary, type Lang } from "@/lib/i18n";
 import Hero from "@/components/sections/Hero";
 import VideoShowcase from "@/components/sections/VideoShowcase";
 import WhyUs from "@/components/sections/WhyUs";
-import DayOnWater from "@/components/sections/DayOnWater";
 import KailaniHero from "@/components/sections/KailaniHero";
 import Boat from "@/components/sections/Boat";
 import FAQ from "@/components/sections/FAQ";
@@ -29,13 +28,12 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero dict={dict} lang={lang as Lang} />
       <VideoShowcase lang={lang as Lang} />
+      <Pricing lang={lang as Lang} />
       <WhyUs dict={dict} />
-      <DayOnWater lang={lang as Lang} />
       <KailaniHero lang={lang as Lang} />
       <Boat dict={dict} />
       <BookCharter lang={lang as Lang} />
       <Reviews dict={dict} />
-      <Pricing lang={lang as Lang} />
       <FAQ dict={dict} lang={lang as Lang} />
       <SunsetCTA lang={lang as Lang} />
       <Contact dict={dict} lang={lang as Lang} />

@@ -2,6 +2,7 @@ import Image from "next/image";
 import BookButton from "@/components/booking/BookButton";
 import type { Translations } from "@/lib/translations/types";
 import type { Lang } from "@/lib/i18n";
+import { BUSINESS, fmtUsd } from "@/lib/business";
 
 type Props = { dict: Translations; lang: Lang };
 
@@ -42,6 +43,12 @@ export default function Hero({ dict, lang }: Props) {
             >
               {dict.hero.headline}
             </h1>
+            <p className="rise-in-2 mt-3 text-white/85 text-sm sm:text-base max-w-md"
+              style={{ textShadow: "0 2px 16px rgba(0,0,0,0.6)" }}>
+              {lang === "en"
+                ? `Private tuna charters out of ${BUSINESS.location.marina.en} · ${BUSINESS.boat.model} · from ${fmtUsd(BUSINESS.trips.half.priceUsd)} per boat`
+                : `Charters privados de atún desde la ${BUSINESS.location.marina.es} · ${BUSINESS.boat.model} · desde ${fmtUsd(BUSINESS.trips.half.priceUsd)} por barco`}
+            </p>
           </div>
 
           <div className="rise-in-3 shrink-0">

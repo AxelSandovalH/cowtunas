@@ -3,6 +3,7 @@ import { isValidLang, getDictionary, type Lang } from "@/lib/i18n";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import BookingProvider from "@/components/booking/BookingProvider";
+import MobileBookBar from "@/components/ui/MobileBookBar";
 
 export function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }];
@@ -25,6 +26,7 @@ export default async function LangLayout({
       <Navbar dict={dict} lang={lang as Lang} />
       <main className="flex-1">{children}</main>
       <Footer dict={dict} lang={lang as Lang} />
+      <MobileBookBar lang={lang as Lang} />
     </BookingProvider>
   );
 }
