@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { TUNA_PRICE_PER_KG_MXN } from "@/lib/tuna";
+import { BUSINESS } from "@/lib/business";
 
-// 30% deposit on published boat rates (USD cents)
+// Deposit on published boat rates, in USD cents (rates live in business.ts)
 const TRIPS = {
-  half: { price: 70000, name: "Half Day Charter" },
-  full: { price: 120000, name: "Full Day Charter" },
+  half: { price: BUSINESS.trips.half.priceUsd * 100, name: "Half Day Charter" },
+  full: { price: BUSINESS.trips.full.priceUsd * 100, name: "Full Day Charter" },
 } as const;
 
 export async function POST(request: Request) {
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
   const stripe = new Stripe(key);
   const body = await request.json();
   const lang = body.lang === "es" ? "es" : "en";
-  const origin0 = request.headers.get("origin") ?? "https://www.cowtunas.com";
+  const origin0 = request.headers.get("origin") ?? BUSINESS.domain;
 
   // Vacuum-packed tuna by the kilo (full payment, no deposit)
   if (body.product === "tuna") {
@@ -67,8 +68,8 @@ export async function POST(request: Request) {
   if (!trip) {
     return NextResponse.json({ error: "Unknown trip type." }, { status: 400 });
   }
-  const deposit = Math.round(trip.price * 0.3);
-  const origin = request.headers.get("origin") ?? "https://cowtunas.vercel.app";
+  const deposit = Math.round(trip.price * BUSINESS.booking.depositRate);
+  const origin = request.headers.get("origin") ?? BUSINESS.domain;
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
