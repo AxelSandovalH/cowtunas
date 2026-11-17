@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { RevenueByMonthChart, BookingStatusChart } from "@/components/admin/DashboardCharts";
 
@@ -92,7 +93,7 @@ export default async function AdminDashboard() {
         <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
             <h2 className="font-semibold text-[#1a2b3c]">Recent Bookings</h2>
-            <a href="/admin/bookings" className="text-[#446084] text-sm hover:underline">View all →</a>
+            <Link href="/admin/bookings" className="text-[#446084] text-sm hover:underline">View all →</Link>
           </div>
           {recentBookings.length === 0 ? (
             <div className="px-6 py-12 text-center text-gray-400 text-sm">No bookings yet</div>
@@ -137,13 +138,13 @@ export default async function AdminDashboard() {
                 { href: "/admin/maintenance/new", label: "Log Maintenance", color: "bg-gray-100 text-[#1a2b3c]" },
                 { href: "/admin/campaigns/new", label: "New Campaign", color: "bg-gray-100 text-[#1a2b3c]" },
               ].map((action) => (
-                <a
+                <Link
                   key={action.href}
                   href={action.href}
                   className={`block text-center py-2.5 px-4 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80 ${action.color}`}
                 >
                   {action.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -152,9 +153,9 @@ export default async function AdminDashboard() {
             <div className="bg-[#1a2b3c] rounded-2xl p-6 text-white">
               <p className="text-white/50 text-xs uppercase tracking-widest mb-1">Last Maintenance</p>
               <p className="font-bold text-lg">${Number(lastMaintenance.cost).toLocaleString()}</p>
-              <a href="/admin/maintenance" className="text-[#14a3c7] text-xs mt-2 inline-block hover:underline">
+              <Link href="/admin/maintenance" className="text-[#14a3c7] text-xs mt-2 inline-block hover:underline">
                 View log →
-              </a>
+              </Link>
             </div>
           )}
         </div>

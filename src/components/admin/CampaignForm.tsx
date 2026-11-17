@@ -147,7 +147,7 @@ export default function CampaignForm({ clients }: { clients: Client[] }) {
             placeholder="Write your message… use {name} to personalize" />
           {message && (
             <div className="mt-2 bg-[#f7f3ed] rounded-xl p-4">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Preview for "John Smith"</p>
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Preview for &ldquo;John Smith&rdquo;</p>
               <p className="text-sm text-gray-700">{preview("John Smith")}</p>
             </div>
           )}
