@@ -3,6 +3,7 @@
 import Reveal from "@/components/ui/Reveal";
 import BookButton from "@/components/booking/BookButton";
 import type { Lang } from "@/lib/i18n";
+import { BUSINESS } from "@/lib/business";
 
 type Props = { lang: Lang };
 
@@ -13,21 +14,19 @@ const plans = [
     name: "Half Day",
     nameEs: "Medio Día",
     hours: "4 hrs",
-    price: 700,
+    price: BUSINESS.trips.half.priceUsd,
     desc: "Perfect for first-timers or a quick morning on the water.",
     descEs: "Perfecto para principiantes o una mañana rápida en el mar.",
     includes: [
       "Departs 6:30 AM · Returns ~11:00 AM",
       "Up to 3 anglers",
       "All tackle & equipment",
-      "Bait included",
       "Fish cleaning service",
     ],
     includesEs: [
       "Sale 6:30 AM · Regresa ~11:00 AM",
       "Hasta 3 pescadores",
       "Todo el equipo de pesca",
-      "Carnada incluida",
       "Servicio de limpieza de pescado",
     ],
     cta: "Book Half Day",
@@ -41,22 +40,20 @@ const plans = [
     name: "Full Day",
     nameEs: "Día Completo",
     hours: "8 hrs",
-    price: 1200,
+    price: BUSINESS.trips.full.priceUsd,
     desc: "The full experience. Go further, stay longer, catch more.",
     descEs: "La experiencia completa. Más lejos, más tiempo, más peces.",
     includes: [
-      "Departs 6:30 AM · Returns ~2:30 PM",
+      `Departs ${BUSINESS.schedule.departure} · Returns ~${BUSINESS.schedule.fullDayReturn}`,
       "Up to 3 anglers",
       "All tackle & equipment",
-      "Live & artificial bait",
       "Fish cleaning + vacuum packing",
       "Cooler with ice for drinks",
     ],
     includesEs: [
-      "Sale 6:30 AM · Regresa ~2:30 PM",
+      `Sale ${BUSINESS.schedule.departure} · Regresa ~${BUSINESS.schedule.fullDayReturn}`,
       "Hasta 3 pescadores",
       "Todo el equipo de pesca",
-      "Carnada viva y artificial",
       "Limpieza + empaque al vacío",
       "Hielera para bebidas",
     ],
@@ -94,6 +91,7 @@ const plans = [
 ];
 
 const notIncluded = [
+  `Live bait — ${BUSINESS.bait.note.en.replace("Live bait runs ", "").replace(", paid at the dock.", ", at the dock")}`,
   "Mexican fishing license (~$20 USD)",
   "Food & beverages",
   "Crew gratuity (15–20% recommended)",
@@ -101,6 +99,7 @@ const notIncluded = [
 ];
 
 const notIncludedEs = [
+  "Carnada viva — ~$300 MXN (~$20 USD), en el muelle",
   "Licencia de pesca mexicana (~$20 USD)",
   "Comida y bebidas",
   "Propina a la tripulación (15–20% recomendado)",
@@ -166,7 +165,7 @@ export default function Pricing({ lang }: Props) {
                           ${plan.price.toLocaleString()}
                         </span>
                         <span className={`text-sm mb-1 ${plan.highlight ? "text-white/70" : "text-white/40"}`}>
-                          {en ? "/ boat" : "/ barco"}
+                          USD {en ? "/ boat" : "/ barco"}
                         </span>
                       </div>
                     ) : (
