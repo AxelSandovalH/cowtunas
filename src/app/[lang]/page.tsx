@@ -8,6 +8,7 @@ import Boat from "@/components/sections/Boat";
 import FAQ from "@/components/sections/FAQ";
 import BookCharter from "@/components/sections/BookCharter";
 import Reviews from "@/components/sections/Reviews";
+import TrustBadges from "@/components/ui/TrustBadges";
 import Pricing from "@/components/sections/Pricing";
 import SunsetCTA from "@/components/sections/SunsetCTA";
 import Contact from "@/components/sections/Contact";
@@ -33,7 +34,8 @@ export default async function HomePage({ params }: Props) {
       <KailaniHero lang={lang as Lang} />
       <Boat dict={dict} />
       <BookCharter lang={lang as Lang} />
-      <Reviews dict={dict} />
+      <Reviews lang={lang as Lang} />
+      <TrustBadges lang={lang as Lang} />
       <FAQ dict={dict} lang={lang as Lang} />
       <SunsetCTA lang={lang as Lang} />
       <Contact dict={dict} lang={lang as Lang} />

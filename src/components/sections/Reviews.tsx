@@ -1,9 +1,19 @@
 import Reveal from "@/components/ui/Reveal";
-import type { Translations } from "@/lib/translations/types";
+import { BUSINESS } from "@/lib/business";
+import type { Lang } from "@/lib/i18n";
 
-type Props = { dict: Translations };
+type Props = { lang: Lang };
 
-export default function Reviews({ dict }: Props) {
+export default function Reviews({ lang }: Props) {
+  // Real, verified reviews only — hidden until the owner supplies them.
+  if (BUSINESS.reviews.length === 0) return null;
+  const items = BUSINESS.reviews.map((r) => ({
+    name: r.name,
+    stars: r.stars,
+    text: lang === "es" ? r.text.es : r.text.en,
+    date: r.date,
+    url: r.url,
+  }));
   return (
     <section id="reviews" className="py-24 bg-[#1a2b3c] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -12,16 +22,16 @@ export default function Reviews({ dict }: Props) {
             Reviews
           </p>
           <h2 className="font-display text-5xl sm:text-6xl font-black text-white uppercase mb-3 text-center">
-            {dict.reviews.title}
+            {lang === "en" ? "What Anglers Say" : "Lo Que Dicen los Pescadores"}
           </h2>
           <p className="text-white/50 text-lg italic mb-14 text-center">
-            {dict.reviews.subtitle}
+            {lang === "en" ? "Real reviews from real trips." : "Reseñas reales de viajes reales."}
           </p>
         </Reveal>
 
         {/* Mobile: horizontal snap carousel · Desktop: 3-column grid */}
         <div className="flex md:grid md:grid-cols-3 gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 pb-4 md:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          {dict.reviews.items.map((review, i) => (
+          {items.map((review, i) => (
             <Reveal key={review.name} delay={i * 0.12} className="w-[85%] sm:w-[60%] md:w-auto shrink-0 md:shrink snap-center">
               <div className="h-full bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col">
                 <div className="flex gap-1 mb-5">
@@ -36,6 +46,17 @@ export default function Reviews({ dict }: Props) {
                 </p>
                 <p className="text-white font-bold uppercase tracking-widest text-sm mt-6">
                   {review.name}
+                  <span className="block normal-case tracking-normal font-normal text-white/40 text-xs mt-1">
+                    {new Date(review.date + "T12:00:00").toLocaleDateString(lang === "en" ? "en-US" : "es-MX", { month: "long", year: "numeric" })}
+                    {review.url && (
+                      <>
+                        {" · "}
+                        <a href={review.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+                          Google
+                        </a>
+                      </>
+                    )}
+                  </span>
                 </p>
               </div>
             </Reveal>
