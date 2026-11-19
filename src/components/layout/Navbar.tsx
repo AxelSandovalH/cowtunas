@@ -59,7 +59,7 @@ export default function Navbar({ dict, lang }: Props) {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6 whitespace-nowrap">
           {links.map((l) => (
             <a
               key={l.href}
@@ -74,7 +74,7 @@ export default function Navbar({ dict, lang }: Props) {
         </nav>
 
         {/* Right actions */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 whitespace-nowrap">
           {/* Lang toggle */}
           <Link
             href={`/${other}`}
@@ -97,7 +97,7 @@ export default function Navbar({ dict, lang }: Props) {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden p-2 ${scrolled ? "text-[#334862]" : "text-white"}`}
+          className={`lg:hidden p-2 ${scrolled ? "text-[#334862]" : "text-white"}`}
           aria-label="Toggle menu"
         >
           {menuOpen ? (
@@ -114,7 +114,7 @@ export default function Navbar({ dict, lang }: Props) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg">
+        <div className="lg:hidden bg-white border-t shadow-lg">
           <nav className="flex flex-col px-4 py-4 gap-3">
             {links.map((l) => (
               <a

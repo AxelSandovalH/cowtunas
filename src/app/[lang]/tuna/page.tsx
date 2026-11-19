@@ -105,8 +105,8 @@ export default async function TunaPage({ params }: Props) {
             <div className="max-w-md">
               <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl mb-3">
                 <Image
-                  src="/tuna-vacuum.jpg"
-                  alt={en ? "Vacuum-packed yellowfin tuna steaks on ice" : "Medallones de atún aleta amarilla empacados al vacío sobre hielo"}
+                  src="/gallery/cw/cw-56.jpg"
+                  alt={en ? "Fresh-cut yellowfin tuna steaks from our catch" : "Medallones de atún aleta amarilla recién cortados de nuestra pesca"}
                   fill
                   sizes="(max-width: 1024px) 100vw, 448px"
                   priority
@@ -114,7 +114,7 @@ export default async function TunaPage({ params }: Props) {
                 />
               </div>
               <div className="grid grid-cols-3 gap-3">
-                {["/gallery/cw/cw-42.jpg", "/gallery/cw/cw-56.jpg", "/gallery/cw/cw-45.jpg"].map((src) => (
+                {["/gallery/cw/cw-42.jpg", "/gallery/cw/cw-57.jpg", "/gallery/cw/cw-45.jpg"].map((src) => (
                   <div key={src} className="relative aspect-square rounded-xl overflow-hidden">
                     <Image src={src} alt="" fill sizes="160px" className="object-cover" />
                   </div>

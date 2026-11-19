@@ -50,8 +50,8 @@ export default function VideoShowcase({ lang }: Props) {
             </div>
             <div className="relative md:col-span-2 overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10 aspect-video md:aspect-auto">
               <LazyVideo
-                src="/AIgenerated.mp4"
-                poster="/posters/video-ai.jpg"
+                src="/video-aerial.mp4"
+                poster="/posters/video-aerial.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
